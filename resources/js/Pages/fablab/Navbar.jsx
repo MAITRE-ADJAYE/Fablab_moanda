@@ -1,30 +1,67 @@
-// Navbar.jsx
 import { Link } from '@inertiajs/react';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaKey } from 'react-icons/fa'; // Importez l'icône de clé depuis Font Awesome
+import logo from "../../../images/logo.png";
 
-export default function Navbar() {
+export default function CustomNavbar() {
     return (
-        <header className="bg-black shadow">
-            <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-                <div className="flex space-x-4 navbar">
-                    <NavbarLink routeName="Accueil" route={route('welcome')} />
-                    <NavbarLink routeName="Formation" route={route('formation')} />
-                    <NavbarLink routeName="Actualité" route={route('actualite')} />
-                    <NavbarLink routeName="Communauté" route={route('communaute')} />
-                    <NavbarLink routeName="Équipements" route={route('equipements')} />
-                    <NavbarLink routeName="Nous Contacter" route={route('contact')} />
-                </div>
-            </div>
-        </header>
-    );
-}
-
-function NavbarLink({ routeName, route }) {
-    return (
-        <Link
-            href={route}
-            className="block text-blue-500 hover:text-blue-600 focus:outline-none focus-visible:ring-[#FF2D20] rounded-md px-3 py-2"
-        >
-            {routeName}
-        </Link>
+        <Navbar style={{ backgroundColor: '#004C97' }} variant="dark" expand="lg" className="shadow">
+            <Container>
+                <Navbar.Brand as={Link} href="/">
+                    <img src={logo} className="mr-3 h-6 sm:h-9" alt="App Logo" />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    {/* Premier menu */}
+                    <Nav className="ms-auto">
+                        <Nav.Link as={Link} href={route('welcome')} className="text-white">
+                            Accueil
+                        </Nav.Link>
+                        <NavDropdown title="Formations" id="formations-dropdown" className="text-white">
+                            <NavDropdown.Item as={Link} href={route('formation')}>Formation 1</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} href={route('formation')}>Formation 2</NavDropdown.Item>
+                        </NavDropdown>
+                        <Nav.Link as={Link} href={route('actualite')} className="text-white">
+                            Actualité
+                        </Nav.Link>
+                        <Nav.Link as={Link} href={route('realisations')} className="text-white">
+                            Réalisations
+                        </Nav.Link>
+                        <Nav.Link as={Link} href={route('equipements')} className="text-white">
+                            Équipements
+                        </Nav.Link>
+                        <NavDropdown title="Communauté" id="communaute-dropdown" className="text-white">
+                            <NavDropdown.Item as={Link} href={route('evenement')}>Événements</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} href={route('communaute')}>Communauté</NavDropdown.Item>
+                        </NavDropdown>
+                        <Nav.Link as={Link} href={route('contact')} className="text-white">
+                            Contact
+                        </Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+            {/* 
+            <Container>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    { Deuxième menu }
+                    <Nav className="ms-auto">
+                    <Nav.Link as={Link} href={route('communaute')} className="text-white">
+                            Communauté
+                        </Nav.Link>
+                        <Nav.Link as={Link} href={route('actualite')} className="text-white">
+                            Événement
+                        </Nav.Link>
+                        <Nav.Link as={Link} href={route('realisations')} className="text-white">
+                            Contact
+                        </Nav.Link>
+                        <Nav.Link as={Link} href={route('register')} className="text-white ml-auto">
+                            <FaKey className="ml-2" />
+                        </Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>*/}
+        </Navbar>
     );
 }

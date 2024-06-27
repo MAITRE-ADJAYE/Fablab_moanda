@@ -1,0 +1,5 @@
+.carousel-image {
+    width: 1024px;
+    height: 400px; /* Hauteur souhaitée pour les images du carousel */
+    object-fit: cover; /* Ajustement de l'image pour remplir le conteneur */
+}
