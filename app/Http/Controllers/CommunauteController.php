@@ -12,9 +12,7 @@ class CommunauteController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Welcome', [
-            'page' => 'communaute',
-        ]);
+        return Inertia::render('fablab/Communaute'); // Assurez-vous que le chemin est correct
     }
 
     /**

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -12,9 +13,7 @@ class FormationController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Welcome', [
-            'page' => 'formation',
-        ]);
+        return Inertia::render('fablab/Formation'); // Assurez-vous que le chemin est correct
     }
 
     /**

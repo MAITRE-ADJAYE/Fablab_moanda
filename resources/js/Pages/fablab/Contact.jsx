@@ -1,31 +1,105 @@
-import { Head } from '@inertiajs/react';
+import React from 'react';
+import CustomNavbar from '../fablab/Navbar.jsx';
+import { Card, Button, Form, Carousel } from 'react-bootstrap';
+import Footer from '../fablab/Footer.jsx';
 
-export default function Welcome({ auth }) {
+const Contact = () => {
     return (
         <>
-            <Head title="Accueil" />
-            <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-                <div className="relative min-h-screen flex flex-col">
-                    <main className="flex-grow bg-white">
-                        <div className="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
-                            <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                                <div className="p-6 text-gray-900">
-                                    <h1 className="text-3xl font-bold mb-4">Bienvenue sur notre site!</h1>
-                                    <p className="mb-4">Découvrez nos dernières formations, actualités, et bien plus encore.</p>
-                                    <p className="mb-4">Rejoignez notre communauté et explorez nos équipements modernes.</p>
-                                    <p className="mb-4">N'hésitez pas à nous contacter pour plus d'informations.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
+            <CustomNavbar />
+            <div className="container">
 
-                    <footer className="bg-gray-800 text-white py-6">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                            <p className="text-sm">&copy; 2024 Votre Société. Tous droits réservés.</p>
-                        </div>
-                    </footer>
+                   {/* Carousel */}
+                   <h2 className="mt-5">Derniers Événements</h2>
+                <Carousel>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="https://via.placeholder.com/800x400"
+                            alt="Premier événement"
+                        />
+                        <Carousel.Caption>
+                            <h3>Premier Événement</h3>
+                            <p>Description du premier événement</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="https://via.placeholder.com/800x400"
+                            alt="Deuxième événement"
+                        />
+                        <Carousel.Caption>
+                            <h3>Deuxième Événement</h3>
+                            <p>Description du deuxième événement</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="https://via.placeholder.com/800x400"
+                            alt="Troisième événement"
+                        />
+                        <Carousel.Caption>
+                            <h3>Troisième Événement</h3>
+                            <p>Description du troisième événement</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
+
+
+                <h1>Contactez-nous</h1>
+
+                <div className="row">
+                    {/* Formulaire de contact */}
+                    <div className="col-md-6">
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>Formulaire de Contact</Card.Title>
+                                <Form>
+                                    <Form.Group className="mb-3" controlId="formName">
+                                        <Form.Label>Votre Nom</Form.Label>
+                                        <Form.Control type="text" placeholder="Entrez votre nom" />
+                                    </Form.Group>
+
+                                    <Form.Group className="mb-3" controlId="formEmail">
+                                        <Form.Label>Votre Email</Form.Label>
+                                        <Form.Control type="email" placeholder="Entrez votre email" />
+                                    </Form.Group>
+
+                                    <Form.Group className="mb-3" controlId="formMessage">
+                                        <Form.Label>Votre Message</Form.Label>
+                                        <Form.Control as="textarea" rows={3} placeholder="Entrez votre message" />
+                                    </Form.Group>
+
+                                    <Button variant="primary" type="submit">
+                                        Envoyer
+                                    </Button>
+                                </Form>
+                            </Card.Body>
+                        </Card>
+                    </div>
+
+                    {/* Informations de contact */}
+                    <div className="col-md-6">
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>Informations de Contact</Card.Title>
+                                <Card.Text>
+                                    <strong>Adresse:</strong> 123 Rue de l'Exemple, Ville, Pays<br />
+                                    <strong>Téléphone:</strong> +123 456 789<br />
+                                    <strong>Email:</strong> contact@example.com<br />
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </div>
                 </div>
+
+             
             </div>
+            <Footer />
         </>
     );
-}
+};
+
+export default Contact;

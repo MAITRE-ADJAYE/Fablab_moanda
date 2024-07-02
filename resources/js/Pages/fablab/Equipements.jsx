@@ -1,31 +1,73 @@
-import { Head } from '@inertiajs/react';
+import React from 'react';
+import CustomNavbar from './Navbar.jsx';
+import { Card, Button, Carousel } from 'react-bootstrap';
+import Footer from './Footer.jsx';
 
-export default function Welcome({ auth }) {
+const Equipement = () => {
+    const equipements = [
+        {
+            id: 1,
+            nom: 'Machine X',
+            description: 'Description de la machine X. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            image: 'https://via.placeholder.com/600x400?text=Machine+X'
+        },
+        {
+            id: 2,
+            nom: 'Machine Y',
+            description: 'Description de la machine Y. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            image: 'https://via.placeholder.com/600x400?text=Machine+Y'
+        },
+        {
+            id: 3,
+            nom: 'Machine Z',
+            description: 'Description de la machine Z. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            image: 'https://via.placeholder.com/600x400?text=Machine+Z'
+        }
+    ];
+
     return (
         <>
-            <Head title="Accueil" />
-            <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-                <div className="relative min-h-screen flex flex-col">
-                    <main className="flex-grow bg-white">
-                        <div className="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
-                            <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                                <div className="p-6 text-gray-900">
-                                    <h1 className="text-3xl font-bold mb-4">Bienvenue sur notre site!</h1>
-                                    <p className="mb-4">Découvrez nos dernières formations, actualités, et bien plus encore.</p>
-                                    <p className="mb-4">Rejoignez notre communauté et explorez nos équipements modernes.</p>
-                                    <p className="mb-4">N'hésitez pas à nous contacter pour plus d'informations.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
+            <CustomNavbar />
+            <div className="container">
+                <h1>Nos Équipements</h1>
+                {/* Carousel */}
+                <Carousel>
+                    {equipements.map(equipement => (
+                        <Carousel.Item key={equipement.id}>
+                            <img
+                                className="d-block w-100"
+                                src={equipement.image}
+                                alt={equipement.nom}
+                            />
+                            <Carousel.Caption>
+                                <h3>{equipement.nom}</h3>
+                                <p>{equipement.description}</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    ))}
+                </Carousel>
 
-                    <footer className="bg-gray-800 text-white py-6">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                            <p className="text-sm">&copy; 2024 Votre Société. Tous droits réservés.</p>
+                {/* Liste des équipements en cards */}
+                <div className="row mt-4">
+                    {equipements.map(equipement => (
+                        <div key={equipement.id} className="col-lg-4 col-md-6 mb-4">
+                            <Card>
+                                <Card.Img variant="top" src={equipement.image} />
+                                <Card.Body>
+                                    <Card.Title>{equipement.nom}</Card.Title>
+                                    <Card.Text>
+                                        {equipement.description}
+                                    </Card.Text>
+                                    <Button variant="primary">Voir détails</Button>
+                                </Card.Body>
+                            </Card>
                         </div>
-                    </footer>
+                    ))}
                 </div>
             </div>
+            <Footer />
         </>
     );
-}
+};
+
+export default Equipement;

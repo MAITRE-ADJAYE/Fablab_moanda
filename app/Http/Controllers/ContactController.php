@@ -12,9 +12,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Welcome', [
-            'page' => 'contact',
-        ]);
+        return Inertia::render('fablab/Contact'); // Assurez-vous que le chemin est correct
     }
 
     /**

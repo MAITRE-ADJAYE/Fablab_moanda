@@ -1,31 +1,74 @@
-import {  Head } from '@inertiajs/react';
+import React from 'react';
+import CustomNavbar from '../fablab/Navbar.jsx';
+import { Card, Button, Carousel } from 'react-bootstrap';
+import Footer from '../fablab/Footer.jsx';
 
-export default function Welcome({ auth }) {
+const Actualite = () => {
+    const articles = [
+        {
+            id: 1,
+            title: 'Titre de l\'article 1',
+            content: 'Contenu de l\'article 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            image: 'https://via.placeholder.com/600x300'
+        },
+        {
+            id: 2,
+            title: 'Titre de l\'article 2',
+            content: 'Contenu de l\'article 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            image: 'https://via.placeholder.com/600x300'
+        },
+        {
+            id: 3,
+            title: 'Titre de l\'article 3',
+            content: 'Contenu de l\'article 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            image: 'https://via.placeholder.com/600x300'
+        }
+    ];
+
     return (
         <>
-            <Head title="Accueil" />
-            <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-                <div className="relative min-h-screen flex flex-col">
-                    <main className="flex-grow bg-white">
-                        <div className="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
-                            <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                                <div className="p-6 text-gray-900">
-                                    <h1 className="text-3xl font-bold mb-4">Bienvenue sur notre site!</h1>
-                                    <p className="mb-4">Découvrez nos dernières formations, actualités, et bien plus encore.</p>
-                                    <p className="mb-4">Rejoignez notre communauté et explorez nos équipements modernes.</p>
-                                    <p className="mb-4">N'hésitez pas à nous contacter pour plus d'informations.</p>
-                                </div>
-                            </div>
+            <CustomNavbar />
+            <div className="container">
+                <h1>Actualités</h1>
+                <Carousel>
+                    {articles.map(article => (
+                        <Carousel.Item key={article.id}>
+                            <img
+                                className="d-block w-100"
+                                src={article.image}
+                                alt={article.title}
+                            />
+                            <Carousel.Caption>
+                                <h3>{article.title}</h3>
+                                <p>{article.content}</p>
+                                <Button variant="primary">Lire plus</Button>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    ))}
+                </Carousel>
+                <div className="row mt-4">
+                    {articles.map(article => (
+                        <div key={article.id} className="col-lg-4 col-md-6 mb-4">
+                            <Card>
+                                <Card.Img variant="top" src={article.image} />
+                                <Card.Body>
+                                    <Card.Title>{article.title}</Card.Title>
+                                    <Card.Text>
+                                        {article.content}
+                                    </Card.Text>
+                                    <Button variant="primary">Lire plus</Button>
+                                </Card.Body>
+                            </Card>
                         </div>
-                    </main>
-
-                    <footer className="bg-gray-800 text-white py-6">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                            <p className="text-sm">&copy; 2024 Votre Société. Tous droits réservés.</p>
-                        </div>
-                    </footer>
+                    ))}
                 </div>
             </div>
+            {/* Footer */}
+            <footer>
+                <Footer />
+            </footer>
         </>
     );
-}
+};
+
+export default Actualite;

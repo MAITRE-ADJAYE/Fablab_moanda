@@ -12,9 +12,7 @@ class EquipementsController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Welcome', [
-            'page' => 'equipements',
-        ]);
+        return Inertia::render('fablab/Equipements'); // Assurez-vous que le chemin est correct
     }
 
     /**

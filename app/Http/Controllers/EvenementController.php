@@ -12,9 +12,7 @@ class EvenementController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Welcome', [
-            'evenement' => 'evenement',
-        ]);
+        return Inertia::render('fablab/Evenement'); // Assurez-vous que le chemin est correct
     }
 
     /**

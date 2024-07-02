@@ -1,31 +1,74 @@
-import { Head } from '@inertiajs/react';
+import React from 'react';
+import CustomNavbar from '../fablab/Navbar.jsx';
+import { Card, Button, Carousel } from 'react-bootstrap';
+import Footer from '../fablab/Footer.jsx';
 
-export default function Welcome({ auth }) {
+const Communauté = () => {
+    const membres = [
+        {
+            id: 1,
+            nom: 'Jean Dupont',
+            description: 'Passionné de technologie et d\'innovation.',
+            image: 'https://via.placeholder.com/600x300'
+        },
+        {
+            id: 2,
+            nom: 'Marie Martin',
+            description: 'Ingénieure spécialisée en développement durable.',
+            image: 'https://via.placeholder.com/600x300'
+        },
+        {
+            id: 3,
+            nom: 'Pierre Dubois',
+            description: 'Artisan numérique et créatif.',
+            image: 'https://via.placeholder.com/600x300'
+        }
+    ];
+
     return (
         <>
-            <Head title="Accueil" />
-            <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-                <div className="relative min-h-screen flex flex-col">
-                    <main className="flex-grow bg-white">
-                        <div className="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
-                            <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                                <div className="p-6 text-gray-900">
-                                    <h1 className="text-3xl font-bold mb-4">Bienvenue sur notre site!</h1>
-                                    <p className="mb-4">Découvrez nos dernières formations, actualités, et bien plus encore.</p>
-                                    <p className="mb-4">Rejoignez notre communauté et explorez nos équipements modernes.</p>
-                                    <p className="mb-4">N'hésitez pas à nous contacter pour plus d'informations.</p>
-                                </div>
-                            </div>
+            <CustomNavbar />
+            <div className="container">
+                <h1>Notre Communauté</h1>
+                <Carousel>
+                    {membres.map(membre => (
+                        <Carousel.Item key={membre.id}>
+                            <img
+                                className="d-block w-100"
+                                src={membre.image}
+                                alt={membre.nom}
+                            />
+                            <Carousel.Caption>
+                                <h3>{membre.nom}</h3>
+                                <p>{membre.description}</p>
+                                <Button variant="primary">Voir profil</Button>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    ))}
+                </Carousel>
+                <div className="row mt-4">
+                    {membres.map(membre => (
+                        <div key={membre.id} className="col-lg-4 col-md-6 mb-4">
+                            <Card>
+                                <Card.Img variant="top" src={membre.image} />
+                                <Card.Body>
+                                    <Card.Title>{membre.nom}</Card.Title>
+                                    <Card.Text>
+                                        {membre.description}
+                                    </Card.Text>
+                                    <Button variant="primary">Voir profil</Button>
+                                </Card.Body>
+                            </Card>
                         </div>
-                    </main>
-
-                    <footer className="bg-gray-800 text-white py-6">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                            <p className="text-sm">&copy; 2024 Votre Société. Tous droits réservés.</p>
-                        </div>
-                    </footer>
+                    ))}
                 </div>
             </div>
+            {/* Footer */}
+            <footer>
+                <Footer />
+            </footer>
         </>
     );
-}
+};
+
+export default Communauté;

@@ -12,11 +12,8 @@ class RealisationsController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Welcome', [
-            'realisation' => 'realisation',
-        ]);
+        return Inertia::render('fablab/Realisation'); // Assurez-vous que le chemin est correct
     }
-
     /**
      * Show the form for creating a new resource.
      */

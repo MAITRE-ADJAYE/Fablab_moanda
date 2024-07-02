@@ -1,23 +1,20 @@
-import { Link, Head } from '@inertiajs/react';
-import Navbar from './fablab/Navbar.jsx';
-import Formation from './fablab/Formation.jsx';
-import Actualite from './fablab/Actualite.jsx';
-import Communaute from './fablab/Communaute.jsx';
-import Equipements from './fablab/Equipements.jsx';
-import Contact from './fablab/Contact.jsx';
+import { Head, Link } from '@inertiajs/react';
+import CustomNavbar from './fablab/Navbar.jsx';
 import Footer from './fablab/Footer.jsx';
-import Carousel from 'react-bootstrap/Carousel'; // Import du Carousel de Bootstrap
+import Actualite from './fablab/Actualite.jsx'; // Assurez-vous que le chemin est correct
+import Carousel from 'react-bootstrap/Carousel';
 
 // Importez vos images
 import Logo from '../../images/logo.png';
 import projet1 from '../../images/projet1.jpg';
 import projet4 from '../../images/projet4.jpg';
-import footer from '../../images/footer.jpg';
-import footer2 from '../../images/footer2.jpg';
-// Importez votre fichier CSS pour les styles personnalisés
-import '../../css/welcome.css'; // Assurez-vous de créer ce fichier CSS
+import footer from '../../images/footer2.jpg';
+import propos from '../../images/a propos.jpg';
 
-export default function Welcome({ page, auth }) {
+// Importez votre fichier CSS pour les styles personnalisés
+import '../../css/welcome.css';
+
+export default function Welcome({ fablab, auth }) {
     const slides = [
         {
             image: projet1,
@@ -35,7 +32,7 @@ export default function Welcome({ page, auth }) {
             description: 'Description du troisième slide'
         },
         {
-            image: footer2,
+            image: propos,
             title: 'Quatrième Slide',
             description: 'Description du quatrième slide'
         }
@@ -45,44 +42,20 @@ export default function Welcome({ page, auth }) {
         <>
             <Head title="Accueil" />
             <section className="bg-gray-50 text-white">
+                <CustomNavbar />
                 <div className="relative min-h-screen flex flex-col">
-                    <div>
-                        {/*<Navbar>
-                            { Logo à gauche du Navbar }
-                            <div className="flex items-center justify-left mt-">
-                                {page === 'communaute' && <Communaute />}
-                                {page === 'evenement' && <Evenement />}
-                                {page === 'contact' && <Contact />}
-                            </div>
-                        </Navbar>*/}
-
-                    </div>
-                    <div>
-                        <Navbar>
-                            {/* Logo à gauche du Navbar */}
-                            <div className="flex items-center justify-left">
-                                <img src={Logo} alt="Logo" className="h-10" />
-                                {page === 'formation' && <Formation />}
-                                {page === 'actualite' && <Actualite />}
-                                {page === 'communaute' && <Communaute />}
-                                {page === 'equipements' && <Equipements />}
-                                {page === 'contact' && <Contact />}
-                            </div>
-                        </Navbar>
-                    </div>
-
-
+                    
                     {/* Carousel */}
-                    <header className="d-flex justify-content-center justify-content-lg-end">
-                        <Carousel interval={3000}>  {/* Defillement automatique toutes les 3 secondes */}
+                    <header className="d-flex justify-content-center justify-content-lg-end carousel-container">
+                        <Carousel interval={3000}>
                             {slides.map((slide, index) => (
                                 <Carousel.Item key={index}>
                                     <img
-                                        className="d-block w-100"
+                                        className="d-block w-100 carousel-image"
                                         src={slide.image}
                                         alt={`Slide ${index + 1}`}
                                     />
-                                    <Carousel.Caption className="text-center">
+                                    <Carousel.Caption className="carousel-caption-center text-center">
                                         <h3>{slide.title}</h3>
                                         <p>{slide.description}</p>
                                     </Carousel.Caption>
