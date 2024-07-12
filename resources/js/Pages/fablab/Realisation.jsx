@@ -1,7 +1,8 @@
 import React from 'react';
 import CustomNavbar from './Navbar.jsx';
-import { Card, Button, Carousel } from 'react-bootstrap';
+import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import Footer from './Footer.jsx';
+import '../../../css/realisation.css'; // Assurez-vous de créer ce fichier CSS
 
 const Realisations = () => {
     const realisations = [
@@ -22,52 +23,71 @@ const Realisations = () => {
             titre: 'Projet Z',
             description: 'Description du projet Z. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             image: 'https://via.placeholder.com/600x400?text=Projet+Z'
+        },
+
+        {
+            id: 4,
+            titre: 'Projet X',
+            description: 'Description du projet X. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            image: 'https://via.placeholder.com/600x400?text=Projet+X'
+        },
+        {
+            id: 5,
+            titre: 'Projet Y',
+            description: 'Description du projet Y. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            image: 'https://via.placeholder.com/600x400?text=Projet+Y'
+        },
+        {
+            id: 6,
+            titre: 'Projet Z',
+            description: 'Description du projet Z. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            image: 'https://via.placeholder.com/600x400?text=Projet+Z'
         }
+
     ];
 
     return (
         <>
+            <nav>
             <CustomNavbar />
-            <div className="container">
-                <h1>Nos Réalisations</h1>
+            </nav>
+            <Container className="mt-5">
+                <h1 className="text-primary">RÉALISATIONS</h1>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
+                <section>
+                    <h2 className="mt-4">Atelier</h2>
+                    <div className="atelier-video text-center">
+                        <video
+                            className="video-fluid"
+                            src="https://www.w3schools.com/html/mov_bbb.mp4"
+                            controls
+                            autoPlay
+                            loop
+                            muted
+                        />
+                    </div>
+                </section>
 
-                {/* Carousel */}
-                <Carousel>
-                    {realisations.map(realisation => (
-                        <Carousel.Item key={realisation.id}>
-                            <img
-                                className="d-block w-100"
-                                src={realisation.image}
-                                alt={realisation.titre}
-                            />
-                            <Carousel.Caption>
-                                <h3>{realisation.titre}</h3>
-                                <p>{realisation.description}</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    ))}
-                </Carousel>
-
-                {/* Liste des réalisations en cards */}
-                <div className="row mt-4">
-                    {realisations.map(realisation => (
-                        <div key={realisation.id} className="col-lg-4 col-md-6 mb-4">
-                            <Card>
-                                <Card.Img variant="top" src={realisation.image} />
-                                <Card.Body>
-                                    <Card.Title>{realisation.titre}</Card.Title>
-                                    <Card.Text>
-                                        {realisation.description}
-                                    </Card.Text>
-                                    <Button variant="primary">Voir détails</Button>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Footer */}
+                <section>
+                    <h2 className="mt-4">Exercices</h2>
+                    <Row>
+                        {realisations.map(realisation => (
+                            <Col key={realisation.id} lg={4} md={6} className="mb-4">
+                                <Card>
+                                    <Card.Img variant="top" src={realisation.image} />
+                                    <Card.Body>
+                                        <Card.Title>{realisation.titre}</Card.Title>
+                                        <Card.Text>
+                                            {realisation.description}
+                                        </Card.Text>
+                                        <Button variant="primary">Lire plus</Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
+                </section>
+            </Container>
             <footer>
                 <Footer />
             </footer>

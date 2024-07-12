@@ -1,0 +1,51 @@
+/* Augmenter la taille du texte des liens de navigation */
+.navbar-container .nav-link, .navbar-container .dropdown-toggle {
+    font-size: 18px; /* Taille du texte */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-container .nav-link:hover, .navbar-container .dropdown-toggle:hover {
+    color: #004C97 !important;
+    background-color: #f0ec0a;
+}
+
+.navbar-container .nav-link.text-white:hover {
+    color: #004C97 !important;
+}
+
+.text-blue {
+    color: #004C97 !important;
+}
+
+.text-blue:hover {
+    color: #003366 !important; /* Optionnel: une nuance plus foncée de bleu au survol */
+}
+
+/* Style pour cibler le titre du NavDropdown */
+.dropdown-toggle.text-blue {
+    color: #004C97 !important;
+}
+
+.dropdown-toggle.text-blue:hover {
+    color: #003366 !important;
+}
+
+.menu3 {
+    z-index: 1000; /* Assure que le z-index est plus élevé pour le deuxième menu */
+}
+
+.menu2 .dropdown-menu {
+    top: -100%; /* Positionne le dropdown au-dessus du menu */
+}
+
+/* Media queries pour les écrans plus petits */
+@media (max-width: 991.98px) {
+    .navbar-container .nav-link, .navbar-container .dropdown-toggle {
+        font-size: 16px; /* Réduire légèrement la taille du texte pour les petits écrans */
+    }
+
+    .navbar-container .custom-navbar,
+    .navbar-container .menu3 {
+        width: 100%; /* Assurez-vous que le menu occupe toute la largeur de l'écran */
+    }
+}

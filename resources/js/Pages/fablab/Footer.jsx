@@ -6,9 +6,10 @@ import {
     faWhatsapp,
     faYoutube
 } from '@fortawesome/free-brands-svg-icons';
-import { faGem, faHome, faEnvelope, faPhone, faPrint, faKey } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import partenaires1 from "../../../images/partenaires1.png";
 import Logo from "../../../images/logo.png";
+import "../../../css/footer.css";
 
 const Footer = () => {
     const [formData, setFormData] = useState({
@@ -35,13 +36,12 @@ const Footer = () => {
                 <div className="row">
                     {/* Description logo */}
                     <div className="col-12 col-sm-6 col-md-6 col-lg-2 mt-5">
-                        <img src={Logo} alt="Fablab Moanda Logo" />
-
-                        <p style={{ fontFamily: 'Italianno, cursive' }}>Connecté à votre avenir</p>
+                        <img src={Logo} alt="Fablab Moanda Logo" style={{ maxWidth: '100%', height: 'auto' }} />
+                        <p style={{ fontFamily: 'Italianno, cursive', color: 'white' }}>Connecté à votre avenir</p>
                     </div>
                     {/* Description Column */}
                     <div className="col-12 col-sm-6 col-md-6 col-lg-3 my-5 mt-5">
-                        <p>
+                        <p style={{ color: 'white' }}>
                             Le Fablab Moanda se positionne d’abord comme un acteur d’inclusion sociale en formant gratuitement
                             la population de Moanda aux métiers du numérique afin de les autonomiser financièrement. <br />
                             Ensuite, comme un hub d’innovations technologiques au Gabon et dans la sous-région.
@@ -49,28 +49,28 @@ const Footer = () => {
                     </div>
                     {/* Contacts Column */}
                     <div className="col-12 col-sm-6 col-md-6 col-lg-3 mt-5 offset-lg-1">
-                        <h5 className="text-uppercase fw-bold mb-4">Contacts</h5>
-                        <p><FontAwesomeIcon icon={faEnvelope} className="me-2" /> contact@fablabmoanda.com</p>
-                        <p><FontAwesomeIcon icon={faPhone} className="me-2" /> +241 61010267</p>
-                        <p><FontAwesomeIcon icon={faHome} className="me-2" /> Salle Polyvalente, R24, Moanda</p>
+                        <h5 className="text-uppercase fw-bold mb-4" style={{ color: 'white' }}>Contacts</h5>
+                        <p><FontAwesomeIcon icon={faEnvelope} className="me-2 text-white" /> <a href="mailto:contact@fablabmoanda.com" className="text-white text-decoration-none">contact@fablabmoanda.com</a></p>
+                        <p><FontAwesomeIcon icon={faPhone} className="me-2 text-white" /> <a href="tel:+24161010267" className="text-white text-decoration-none">+241 61010267</a></p>
+                        <p><FontAwesomeIcon icon={faHome} className="me-2 text-white" /> <a href="https://maps.app.goo.gl/qpCu9MiJT3F4BMrp8" className="text-white text-decoration-none"> Salle Polyvalente, R24, Moanda</a></p>
                         <div className="mt-4">
-                            <a href="#" className="me-4 text-reset">
-                                <FontAwesomeIcon icon={faLinkedinIn} />
+                            <a href="#" className="me-3 text-reset">
+                                <FontAwesomeIcon icon={faLinkedinIn} className="fa-lg social-icon" />
                             </a>
-                            <a href="#" className="me-4 text-reset">
-                                <FontAwesomeIcon icon={faWhatsapp} />
+                            <a href="#" className="me-3 text-reset">
+                                <FontAwesomeIcon icon={faWhatsapp} className="fa-lg social-icon" />
                             </a>
-                            <a href="#" className="me-4 text-reset">
-                                <FontAwesomeIcon icon={faFacebookF} />
+                            <a href="#" className="me-3 text-reset">
+                                <FontAwesomeIcon icon={faFacebookF} className="fa-lg social-icon" />
                             </a>
-                            <a href="#" className="me-4 text-reset">
-                                <FontAwesomeIcon icon={faYoutube} />
+                            <a href="#" className="me-3 text-reset">
+                                <FontAwesomeIcon icon={faYoutube} className="fa-lg social-icon" />
                             </a>
                         </div>
                     </div>
                     {/* Contact Form Column */}
                     <div className="col-12 col-sm-6 col-md-6 col-lg-3 mt-5">
-                        <h5 className="text-uppercase fw-bold">Laissez-nous un message</h5>
+                        <h5 className="text-uppercase fw-bold" style={{ color: 'white' }}>Laissez-nous un message</h5>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group mb-1">
                                 <label htmlFor="firstAndLastName"></label>
@@ -121,7 +121,6 @@ const Footer = () => {
                                 ></textarea>
                             </div>
                             <button type="submit" className="btn btn-warning text-white" style={{ backgroundColor: '#FF8C00' }}>Envoyer</button>
-
                         </form>
                     </div>
                 </div>

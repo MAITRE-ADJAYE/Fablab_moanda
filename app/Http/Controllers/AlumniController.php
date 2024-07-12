@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class ElementController extends Controller
+class AlumniController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Inertia::render('fablab/element'); // Assurez-vous que le chemin est correct
+        return Inertia::render('fablab/Alumni'); // Assurez-vous que le chemin est correct
     }
 
     /**

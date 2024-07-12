@@ -4,25 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use App\Models\Actualite; // Importation du modèle Actualite
-use App\Models\Realisation; // Importation du modèle Realisation
 
-class WelcomeController extends Controller
+class BenevoleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $actualites = Actualite::latest()->take(3)->get();
-        $realisations = Realisation::latest()->take(3)->get();
-
-        return Inertia::render('Welcome', [
-            'page' => 'index',
-            'actualites' => $actualites,
-            'realisations' => $realisations,
-        ]);
-    }
+    
+     public function index()
+     {
+         return Inertia::render('fablab/Benevole'); // Assurez-vous que le chemin est correct
+     }
 
     /**
      * Show the form for creating a new resource.

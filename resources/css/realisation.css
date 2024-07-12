@@ -1,0 +1,42 @@
+.text-primary {
+    color: #004C97; /* Ajustez à votre couleur bleue préférée */
+}
+
+.atelier-video {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.video-fluid {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.atelier-video p {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #333;
+   
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1em;
+    color: #666;
+}

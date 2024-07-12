@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class CommunauteController extends Controller
+class ElectroController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Inertia::render('fablab/Communaute'); // Assurez-vous que le chemin est correct
+        return Inertia::render('fablab/Electro'); // Assurez-vous que le chemin est correct
     }
 
     /**

@@ -1,0 +1,15 @@
+.highlight {
+    background-color: #ffcccb; /* Couleur de surbrillance pour les événements */
+}
+
+.calendar-legend {
+    margin-top: 20px;
+}
+
+.calendar-legend .highlight {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #ffcccb; /* Couleur de surbrillance pour la légende */
+    margin-right: 5px;
+}

@@ -3,7 +3,7 @@ import CustomNavbar from '../fablab/Navbar.jsx';
 import { Card, Button, Carousel } from 'react-bootstrap';
 import Footer from '../fablab/Footer.jsx';
 
-const Communauté = () => {
+const Alumni = () => {
     const membres = [
         {
             id: 1,
@@ -29,7 +29,7 @@ const Communauté = () => {
         <>
             <CustomNavbar />
             <div className="container">
-                <h1>Notre Communauté</h1>
+                <h1>Notre Alumni</h1>
                 <Carousel>
                     {membres.map(membre => (
                         <Carousel.Item key={membre.id}>
@@ -71,4 +71,4 @@ const Communauté = () => {
     );
 };
 
-export default Communauté;
+export default Alumni;
