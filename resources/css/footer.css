@@ -1,3 +1,49 @@
 .social-icon {
-    font-size: 28px; /* Taille des icônes ajustée */
+    font-size: 40px; /* Taille des icônes ajustée */
+}
+
+.footer-column {
+    text-align: center;
+}
+
+.footer-logo {
+    max-width: 60%;
+    height: auto;
+    align-content: center;
+}
+
+@media (max-width: 768px) {
+    .footer-column {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-logo {
+        max-width: 60%;
+    }
+
+    p, h5, a {
+        text-align: justify;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-logo {
+        max-width: 50%;
+    }
+
+    p, h5, a {
+        text-align: justify;
+    }
+}
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 1000;
+    color: rgb(0, 153, 255);
 }

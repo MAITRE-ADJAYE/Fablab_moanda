@@ -5,6 +5,7 @@ import { Card, Button, Carousel, Container, Row, Col } from 'react-bootstrap';
 import Footer from './Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Element } from 'react-scroll';
+import '../../../css/style.css'; // Importer le fichier CSS contenant les styles
 
 const ReferentDigital = () => {
     const realisations = [
@@ -43,7 +44,7 @@ const ReferentDigital = () => {
         },
         {
             id: 4,
-            titre: 'Exercice 3',
+            titre: 'Exercice 4',
             videoUrl: 'https://www.youtube.com/embed/your-video-id'
         },
         {
@@ -103,7 +104,7 @@ const ReferentDigital = () => {
                                     />
                                     <Carousel.Caption>
                                         <h3>{realisation.titre}</h3>
-                                        <p>{realisation.description}</p>
+                                        <p className="text-justify">{realisation.description}</p>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             ))}
@@ -122,11 +123,11 @@ const ReferentDigital = () => {
                             <Row>
                                 <Col md={4} className="d-flex align-items-center justify-content-center">
                                     <motion.div variants={cardVariants}>
-                                        <Card style={{ width: '20rem', height: 'fit-content' }}>
-                                            <Card.Img variant="top" src="https://via.placeholder.com/200x300" />
+                                        <Card style={{ width: '22rem', height: 'fit-content' }}>
+                                            <Card.Img variant="top" src="https://via.placeholder.com/200x200" />
                                             <Card.Body className="text-center">
                                                 <Card.Title>{ateliers[0].titre}</Card.Title>
-                                                <Card.Text>{ateliers[0].description}</Card.Text>
+                                                <Card.Text className="text-justify">{ateliers[0].description}</Card.Text>
                                                 <Button variant="primary">En savoir plus</Button>
                                             </Card.Body>
                                         </Card>
@@ -135,7 +136,7 @@ const ReferentDigital = () => {
                                 <Col md={8} className="d-flex align-items-center">
                                     <motion.div variants={cardVariants}>
                                         <div className="bg-light p-3 mb-4">
-                                            <p>
+                                            <p className="text-justify">
                                                 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
                                             </p>
                                         </div>
@@ -152,16 +153,16 @@ const ReferentDigital = () => {
                         <Row className="justify-content-center">
                             <Col md={8}>
                                 <motion.div variants={containerVariants} initial="hidden" animate="visible">
-                                    <p className="text-center">
-                                    La discipline des Référents Digitaux vous plonge au cœur de la transformation numérique. 
-                                    En tant que référent digital, vous deviendrez un acteur clé dans l'accompagnement des entreprises vers une utilisation optimale des outils numériques. 
-                                    Vous apprendrez à évaluer les besoins numériques, 
-                                    à concevoir des stratégies digitales et à mettre en œuvre des solutions innovantes pour améliorer les performances des organisations. 
-                                    Nos ateliers et exercices pratiques vous fourniront les compétences essentielles en gestion de projet digital, 
-                                    en marketing numérique et en analyse de données. 
-                                    Que vous soyez novice ou professionnel en quête de perfectionnement, 
-                                    notre programme est conçu pour vous doter des connaissances nécessaires pour naviguer dans le monde digital en constante évolution. 
-                                    Rejoignez-nous pour devenir un expert en transformation numérique et aider les entreprises à réussir leur transition digitale!
+                                    <p className="text-justify text-center-responsive">
+                                        La discipline des Référents Digitaux vous plonge au cœur de la transformation numérique. 
+                                        En tant que référent digital, vous deviendrez un acteur clé dans l'accompagnement des entreprises vers une utilisation optimale des outils numériques. 
+                                        Vous apprendrez à évaluer les besoins numériques, 
+                                        à concevoir des stratégies digitales et à mettre en œuvre des solutions innovantes pour améliorer les performances des organisations. 
+                                        Nos ateliers et exercices pratiques vous fourniront les compétences essentielles en gestion de projet digital, 
+                                        en marketing numérique et en analyse de données. 
+                                        Que vous soyez novice ou professionnel en quête de perfectionnement, 
+                                        notre programme est conçu pour vous doter des connaissances nécessaires pour naviguer dans le monde digital en constante évolution. 
+                                        Rejoignez-nous pour devenir un expert en transformation numérique et aider les entreprises à réussir leur transition digitale!
                                     </p>
                                 </motion.div>
                             </Col>
@@ -193,7 +194,7 @@ const ReferentDigital = () => {
                                                 ></iframe>
                                                 <Card.Body>
                                                     <Card.Title>{atelier.titre}</Card.Title>
-                                                    <Card.Text>{atelier.description}</Card.Text>
+                                                    <Card.Text className="text-justify">{atelier.description}</Card.Text>
                                                 </Card.Body>
                                             </Card>
                                         </motion.div>

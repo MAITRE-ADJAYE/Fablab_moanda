@@ -5,14 +5,15 @@ import { Card, Button, Carousel, Container, Row, Col } from 'react-bootstrap';
 import Footer from './Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Element } from 'react-scroll';
+import '../../../css/style.css'; // Importer le fichier CSS contenant les styles
 
-const ReferentDigital = () => {
+const Electronique = () => {
     const realisations = [
         {
             id: 1,
-            titre: 'Réalisations Digitales',
+            titre: 'Réalisations Electronique',
             description: 'Découvrez nos réalisations en électronique et IoT.',
-            image: 'https://via.placeholder.com/1200x400?text=R%C3%A9alisations+Digitales'
+            image: 'https://via.placeholder.com/1200x400?text=R%C3%A9alisations+Electro'
         }
     ];
 
@@ -103,7 +104,7 @@ const ReferentDigital = () => {
                                     />
                                     <Carousel.Caption>
                                         <h3>{realisation.titre}</h3>
-                                        <p>{realisation.description}</p>
+                                        <p className="text-justify">{realisation.description}</p>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             ))}
@@ -122,11 +123,11 @@ const ReferentDigital = () => {
                             <Row>
                                 <Col md={4} className="d-flex align-items-center justify-content-center">
                                     <motion.div variants={cardVariants}>
-                                        <Card style={{ width: '20rem', height: 'fit-content' }}>
-                                            <Card.Img variant="top" src="https://via.placeholder.com/200x300" />
+                                        <Card style={{ width: '22rem', height: 'fit-content' }}>
+                                            <Card.Img variant="top" src="https://via.placeholder.com/200x200" />
                                             <Card.Body className="text-center">
                                                 <Card.Title>{ateliers[0].titre}</Card.Title>
-                                                <Card.Text>{ateliers[0].description}</Card.Text>
+                                                <Card.Text className="text-justify">{ateliers[0].description}</Card.Text>
                                                 <Button variant="primary">En savoir plus</Button>
                                             </Card.Body>
                                         </Card>
@@ -135,7 +136,7 @@ const ReferentDigital = () => {
                                 <Col md={8} className="d-flex align-items-center">
                                     <motion.div variants={cardVariants}>
                                         <div className="bg-light p-3 mb-4">
-                                            <p>
+                                            <p className="text-justify">
                                                 Découvrez nos dernières innovations en électronique qui révolutionnent le marché.
                                             </p>
                                         </div>
@@ -146,20 +147,19 @@ const ReferentDigital = () => {
                     </motion.div>
                 </Element>
 
-                {/* Add discipline description block */}
                 <Element name="disciplineDescription">
                     <Container className="mt-5 mb-5">
                         <Row className="justify-content-center">
                             <Col md={8}>
                                 <motion.div variants={containerVariants} initial="hidden" animate="visible">
-                                    <p className="text-center">
-                                    Bienvenue dans le domaine fascinant de l'électronique et de la robotique, où l'ingéniosité humaine rencontre la technologie avancée. 
-                                    Cette discipline vous immerge dans la conception et la création de circuits électroniques et de robots autonomes. 
-                                    Que vous soyez un débutant passionné ou un expert chevronné, nos ateliers et exercices vous guideront à travers les bases et les techniques avancées de l'électronique et de la robotique. 
-                                    Apprenez à construire et programmer des robots capables d'interagir avec leur environnement, 
-                                    tout en explorant les principes fondamentaux des composants électroniques. Notre programme met l'accent sur l'innovation, la résolution de problèmes et la pensée critique, 
-                                    vous préparant à relever les défis de l'ère technologique. 
-                                    Rejoignez-nous pour transformer vos idées en solutions électroniques et robotiques concrètes et novatrices dès aujourd'hui!
+                                    <p className="text-justify text-center-responsive">
+                                        Bienvenue dans le domaine fascinant de l'électronique et de la robotique, où l'ingéniosité humaine rencontre la technologie avancée. 
+                                        Cette discipline vous immerge dans la conception et la création de circuits électroniques et de robots autonomes. 
+                                        Que vous soyez un débutant passionné ou un expert chevronné, nos ateliers et exercices vous guideront à travers les bases et les techniques avancées de l'électronique et de la robotique. 
+                                        Apprenez à construire et programmer des robots capables d'interagir avec leur environnement, 
+                                        tout en explorant les principes fondamentaux des composants électroniques. Notre programme met l'accent sur l'innovation, la résolution de problèmes et la pensée critique, 
+                                        vous préparant à relever les défis de l'ère technologique. 
+                                        Rejoignez-nous pour transformer vos idées en solutions électroniques et robotiques concrètes et novatrices dès aujourd'hui !
                                     </p>
                                 </motion.div>
                             </Col>
@@ -242,4 +242,4 @@ const ReferentDigital = () => {
     );
 };
 
-export default ReferentDigital;
+export default Electronique;

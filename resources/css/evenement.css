@@ -1,37 +1,95 @@
-/* evenement.css */
+/* evenements.css */
 
-.large-calendar .react-calendar {
-    width: 80%;
-    max-width: 800px;
-    font-size: 1.2em;
-    margin: auto;
+.events {
+    display: flex;
+    flex-direction: column;
 }
 
-.calendar-legend {
+.event {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Couleurs pour les événements */
+.past-event {
+    background-color: #f8d7da; /* Rouge clair */
+    color: #721c24;
+}
+
+.imminent-event {
+    background-color: #fff3cd; /* Jaune clair */
+    color: #856404;
+}
+
+.future-event {
+    background-color: #d4edda; /* Vert clair */
+    color: #155724;
+}
+
+/* Styles des jours dans le calendrier */
+.day {
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 80px;
+    max-width: 80px;
+}
+
+.date-number {
+    font-weight: bold;
+}
+
+.empty {
+    background-color: #f5f5f5;
+}
+
+/* Légende */
+.legend {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 10px;
     margin-top: 20px;
 }
 
-.past-event-legend::before,
-.imminent-event-legend::before,
-.future-event-legend::before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+.legend div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.past-event-legend::before {
-    background-color: red;
+.past-event-indicator,
+.imminent-event-indicator,
+.future-event-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
 }
 
-.imminent-event-legend::before {
-    background-color: blue;
+.past-event-indicator {
+    background-color: #96030f;
 }
 
-.future-event-legend::before {
-    background-color: green;
+.imminent-event-indicator {
+    background-color: #0072dd;
+}
+
+.future-event-indicator {
+    background-color: #009723;
+}
+
+.past-event {
+    background-color: #96030f;
+}
+
+.imminent-event {
+    background-color: #0072dd;
+}
+
+.future-event {
+    background-color: #009723;
 }

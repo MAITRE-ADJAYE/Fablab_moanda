@@ -3,49 +3,85 @@ import { Head, Link } from '@inertiajs/react';
 import CustomNavbar from './fablab/Navbar.jsx';
 import Footer from './fablab/Footer.jsx';
 import Carousel from 'react-bootstrap/Carousel';
-import Button from 'react-bootstrap/Button';
-
-// Importez vos images
-import projet1 from '../../images/projet1.jpg';
-import projet4 from '../../images/projet4.jpg';
-import footer from '../../images/footer2.jpg';
-import propos from '../../images/a propos.jpg';
-
-// Importez votre fichier CSS pour les styles personnalisés
+import 'bootstrap/dist/css/bootstrap.min.css';
+import TeamCarousel from './TeamCarousel';
 import '../../css/welcome.css';
 
-export default function Welcome({ fablab, auth, actualites = [], realisations = [] }) {
+// Importez vos images (placeholders pour l'exemple)
+import projet1 from '../../images/visite.jpg';
+import projet4 from '../../images/visite.jpg';
+import footer from '../../images/projet.jpg';
+import propos from '../../images/visite.jpg';
+import equipe2 from '../../images/jordan.jpg';
+import Jordan from '../../images/Dimitri.jpg';
+
+export default function Welcome({ fablab, auth, actualites = [], realisations = [], evenements = [] }) {
     const slides = [
         {
             image: projet1,
             title: 'FABLAB MOANDA',
-            description: 'Description du premier slide'
+            description: 'Bienvenue dans l\'univers du possible'
         },
         {
             image: projet4,
             title: 'FABLAB MOANDA',
-            description: 'Description du deuxième slide'
+            description: 'Où vous pouvez laisser libre cours à votre imagination'
         },
         {
             image: footer,
             title: 'FABLAB MOANDA',
-            description: 'Description du troisième slide'
+            description: 'Et où l\'information et les sciences du numérique'
         },
         {
             image: propos,
             title: 'FABLAB MOANDA',
-            description: 'Description du quatrième slide'
+            description: 'Vous ouvre grandement leurs portes pour un épanouissement total.'
+        }
+    ];
+
+    const equipe = [
+        {
+            image: Jordan,
+            name: 'Dimitri ONGOUA',
+            role: 'Directeur'
+        },
+        {
+            image: Jordan,
+            name: 'Dimitri ONGOUA',
+            role: 'Responsable des Projets'
+        },
+        {
+            image: Jordan,
+            name: 'Dimitri ONGOUA',
+            role: 'Designer'
+        },
+        {
+            image: Jordan,
+            name: 'Dimitri ONGOUA',
+            role: 'Développeur Web'
+        },
+        {
+            image: equipe2,
+            name: 'Jordan TALLA',
+            role: 'Développeur Web'
+        },
+        {
+            image: Jordan,
+            name: 'Dimitri ONGOUA',
+            role: 'Développeur Web'
         }
     ];
 
     return (
         <>
             <Head title="Accueil" />
-            <section className="bg-gray-50 text-white">
+            <header className=''>
                 <CustomNavbar />
+
+            </header>
+            <section className="bg-gray-50 text-white">
                 <div className="relative min-h-screen flex flex-col">
-                    
-                    {/* Carousel */}
+                    {/* Carousel principal */}
                     <header className="d-flex justify-content-center justify-content-lg-end carousel-container">
                         <Carousel interval={3000}>
                             {slides.map((slide, index) => (
@@ -57,86 +93,147 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                     />
                                     <Carousel.Caption className="carousel-caption-center text-center d-flex justify-content-center align-items-center">
                                         <div className="row">
-                                            <div className="col-md-7 text-center">
-                                                <h2 className="font-bold text-4xl">{slide.title}</h2>
-                                                <p>{slide.description}</p>
-                                            </div>
-                                            <div className="col-md-3 text-center d-flex flex-column justify-content-center align-items-center">
-                                                <p className="font-bold mb-4">
-                                                    It is a long established fact that a reader will be distracted 
-                                                    by the readable content of a page when looking at its layout. 
-                                                    The point of using Lorem Ipsum is that it has a more-or-less normal
-                                                    distribution of letters, as opposed to using 'Content here, 
-                                                    content here', making it look like readable English.
-                                                </p>
-                                                <div className="d-flex align-items-center">
-                                                    <Link href="#" className="me-6 text-decoration-none text-primary fw-bold">Lire plus →</Link>
-                                                    <Button variant="primary">S'abonner</Button>
-                                                </div>
+                                            <div className="col-12 col-lg-12 mt-5">
+                                                <h2 className="font-bold text-6xl text-white mb-4 d-none d-lg-block" style={{ fontSize: '5rem' }}>{slide.title}</h2>
+                                                <h2 className="font-bold text-4xl text-white mb-4 d-block d-lg-none" style={{ fontSize: '3rem' }}>{slide.title}</h2>
+                                                <p className="mb-4 d-none d-lg-block text-justify" style={{ fontSize: '1.5rem' }}>{slide.description}</p>
+                                                <p className="mb-4 d-block d-lg-none text-justify" style={{ fontSize: '1rem' }}>{slide.description}</p>
                                             </div>
                                         </div>
                                     </Carousel.Caption>
+
+
                                 </Carousel.Item>
                             ))}
                         </Carousel>
                     </header>
+
+                    <section className="welcome-section py-5">
+                        <div className="container">
+                            <div className="row mb-4">
+                                <div className="col-md-12 text-left">
+                                    <h2 className="font-bold text-4xl mb-4 text-primary">Bienvenue au Fablab Moanda</h2>
+                                    <p className="mb-4 text-secondary text-justify">Le FabLab Moanda est un espace de fabrication numérique collaboratif ouvert à tous.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row align-items-center mb-4">
+                                <div className="col-md-6">
+                                    <h2 className="font-bold text-4xl mb-4 text-primary">Mot du Fab Manager</h2>
+                                    <p className="mb-4 text-secondary text-justify">Le FabLab Moanda est un espace de fabrication numérique collaboratif ouvert à tous.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                    </p>
+                                </div>
+                                <div className="col-md-6 text-center">
+                                    <img src={Jordan} alt="Bienvenue au Fablab Moanda" className="img-fluid img-thumbnail" style={{ maxWidth: '70%', height: 'auto' }} />
+                                </div>
+                            </div>
+                            <div className="row align-items-center">
+                                <div className="col-md-6">
+                                    <h2 className="font-bold text-4xl mb-4 text-primary">Notre vision</h2>
+                                    <p className="mb-4 text-secondary text-justify">Le FabLab Moanda est un espace de fabrication numérique collaboratif ouvert à tous.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    {/* Carousel des cartes */}
+                    <section id="cards-carousel" className="py-5">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-4 col-md-6 mb-4 d-flex flex-column">
+                                    <h5 className="card-title text-center card-title-custom">Actualités</h5>
+                                    <div className="card bg-dark text-white flex-grow-1">
+                                        <Carousel>
+                                            <Carousel.Item>
+                                                <img src={projet1} className="d-block w-100" alt="Actualité Image 1" />
+                                            </Carousel.Item>
+                                            <Carousel.Item>
+                                                <img src={projet4} className="d-block w-100" alt="Actualité Image 2" />
+                                            </Carousel.Item>
+                                        </Carousel>
+                                        <div className="card-img-overlay d-flex flex-column justify-content-end">
+                                            <p className="card-text text-center">Dernières nouvelles et mises à jour</p>
+                                            <Link href={route('actualite')} className="btn btn-primary mt-2">Voir plus</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6 mb-4 d-flex flex-column">
+                                    <h5 className="card-title text-center card-title-custom">Réalisations</h5>
+                                    <div className="card bg-dark text-white flex-grow-1">
+                                        <Carousel>
+                                            <Carousel.Item>
+                                                <img src={projet4} className="d-block w-100" alt="Réalisation Image 1" />
+                                            </Carousel.Item>
+                                            <Carousel.Item>
+                                                <img src={projet4} className="d-block w-100" alt="Réalisation Image 2" />
+                                            </Carousel.Item>
+                                        </Carousel>
+                                        <div className="card-img-overlay d-flex flex-column justify-content-end">
+                                            <p className="card-text text-center">Découvrez nos projets réalisés</p>
+                                            <Link href={route('realisations')} className="btn btn-primary mt-2">Voir plus</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6 mb-4 d-flex flex-column">
+                                    <h5 className="card-title text-center card-title-custom">Événements</h5>
+                                    <div className="card bg-dark text-white flex-grow-1">
+                                        <Carousel>
+                                            <Carousel.Item>
+                                                <img src={footer} className="d-block w-100" alt="Événement Image 1" />
+                                            </Carousel.Item>
+                                            <Carousel.Item>
+                                                <img src={footer} className="d-block w-100" alt="Événement Image 2" />
+                                            </Carousel.Item>
+                                        </Carousel>
+                                        <div className="card-img-overlay d-flex flex-column justify-content-end">
+                                            <p className="card-text text-center">Participez à nos événements</p>
+                                            <Link href={route('evenement')} className="btn btn-primary mt-2">Voir plus</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Section équipe */}
+                    <section id="team" className="py-5">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-12 text-center">
+                                    <h2 className="team-title text-primary">Notre Équipe</h2>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-12">
+                                    <TeamCarousel teamMembers={equipe} />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <Footer />
                 </div>
             </section>
-
-            {/* Contenu principal */}
-            <main className="flex-grow bg-white">
-                <div className="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-8">
-                        <div className="p-6 text-gray-900">
-                            <h1 className="text-3xl font-bold mb-4">Bienvenue sur notre site!</h1>
-                            <p className="mb-4">Découvrez nos dernières formations, actualités, et bien plus encore.</p>
-                            <p className="mb-4">Rejoignez notre communauté et explorez nos équipements modernes.</p>
-                            <p className="mb-4">N'hésitez pas à nous contacter pour plus d'informations.</p>
-                        </div>
-                    </div>
-
-                    <div className="mt-8">
-                        <h2 className="text-2xl font-bold mb-4">Actualités</h2>
-                        <div className="row">
-                            {actualites.slice(0, 3).map((actualite) => (
-                                <div className="col-md-4 mb-4" key={actualite.id}>
-                                    <div className="card">
-                                        <img src={actualite.image} className="card-img-top" alt={actualite.title} />
-                                        <div className="card-body">
-                                            <h5 className="card-title">{actualite.title}</h5>
-                                            <p className="card-text">{actualite.description}</p>
-                                            <Link href={`/actualite/${actualite.id}`} className="btn btn-primary">Lire plus</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="mt-8">
-                        <h2 className="text-2xl font-bold mb-4">Réalisations</h2>
-                        <div className="row">
-                            {realisations.slice(0, 3).map((realisation) => (
-                                <div className="col-md-4 mb-4" key={realisation.id}>
-                                    <div className="card">
-                                        <img src={realisation.image} className="card-img-top" alt={realisation.title} />
-                                        <div className="card-body">
-                                            <h5 className="card-title">{realisation.title}</h5>
-                                            <p className="card-text">{realisation.description}</p>
-                                            <Link href={`/realisation/${realisation.id}`} className="btn btn-primary">Lire plus</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </main>
-
-            {/* Footer */}
-            <footer>
-                <Footer />
-            </footer>
         </>
     );
 }

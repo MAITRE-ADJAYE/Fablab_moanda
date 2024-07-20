@@ -1,51 +1,106 @@
-/* Augmenter la taille du texte des liens de navigation */
-.navbar-container .nav-link, .navbar-container .dropdown-toggle {
-    font-size: 18px; /* Taille du texte */
-    transition: color 0.3s ease, background-color 0.3s ease;
+/* Styles pour les logos */
+.navbar-brand img {
+    height: 65px; /* Augmenter la hauteur du logo */
+    width: auto;  /* Conserver les proportions du logo */
 }
 
-.navbar-container .nav-link:hover, .navbar-container .dropdown-toggle:hover {
-    color: #004C97 !important;
-    background-color: #f0ec0a;
+/* Styles pour les liens du menu */
+.nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
 }
 
-.navbar-container .nav-link.text-white:hover {
-    color: #004C97 !important;
+/* Styles spécifiques pour les menus déroulants */
+.navbar-nav .dropdown-menu {
+    background-color: #ffffff; /* Couleur de fond du dropdown */
+    z-index: 1050; /* Assurez-vous que le dropdown apparaît au-dessus du premier menu */
+}
+
+.navbar-nav .dropdown-item {
+    color: #ffffff; /* Couleur du texte dans les items de menu */
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #fffb0f; /* Couleur de fond au survol des items de menu */
+    color: #ffffff; /* Couleur du texte au survol des items de menu */
+}
+
+/* Custom toggle button styles */
+.custom-toggler.navbar-toggler {
+    border-color: #fff;
+}
+
+.custom-toggler.navbar-toggler .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" linecap="round" linejoin="round" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+/* Responsive styles */
+@media (max-width: 991.98px) {
+    .navbar-container {
+        width: 100%;
+    }
+
+    .menu3 {
+        display: block; /* Afficher le second menu sur les écrans petits */
+    }
+
+    .custom-navbar {
+        display: none; /* Masquer le premier menu sur les écrans petits */
+    }
+
+    .menu3 .navbar-nav {
+        margin-top: 10px; /* Espacement entre le menu secondaire et le menu principal */
+    }
+
+    .menu3 .navbar-nav .nav-item {
+        margin-bottom: 5px; /* Espacement entre les items du menu principal */
+    }
+
+    .custom-toggler.navbar-toggler {
+        border-color: #afda14;
+    }
+
+    .custom-toggler.navbar-toggler .navbar-toggler-icon {
+        background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%280, 76, 151, 1%29" stroke-width="2" linecap="round" linejoin="round" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+    }
+}
+
+/* Style pour l'onglet actif */
+.nav-link.active {
+    border-bottom: 3px solid #004C97; /* Couleur de la barre indiquant l'onglet actif */
 }
 
 .text-blue {
-    color: #004C97 !important;
+    color: #004C97; /* Définissez votre couleur de texte bleu ici */
 }
 
-.text-blue:hover {
-    color: #003366 !important; /* Optionnel: une nuance plus foncée de bleu au survol */
+.menu3 .dropdown-menu {
+    z-index: 1050; /* Assurez-vous que le z-index soit plus élevé que celui du premier menu */
 }
 
-/* Style pour cibler le titre du NavDropdown */
-.dropdown-toggle.text-blue {
-    color: #004C97 !important;
+.nav-link-custom {
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
 }
 
-.dropdown-toggle.text-blue:hover {
-    color: #003366 !important;
+.nav-link-custom:hover, .nav-link-custom.active {
+    background-color: rgba(27, 183, 245, 0.1); /* Couleur de fond au survol ou quand actif */
+    border-radius: 5px; /* Bordure arrondie au survol ou quand actif */
 }
 
-.menu3 {
-    z-index: 1000; /* Assure que le z-index est plus élevé pour le deuxième menu */
+/* Styles pour le premier menu (principal) */
+.custom-navbar .nav-link {
+    font-size: 1.1rem; /* Ajustez la taille selon vos besoins */
 }
 
-.menu2 .dropdown-menu {
-    top: -100%; /* Positionne le dropdown au-dessus du menu */
+/* Styles pour le deuxième menu (communauté et formations) */
+.menu2 .nav-link-custom {
+    font-size: 1.1rem; /* Ajustez la taille selon vos besoins */
 }
 
-/* Media queries pour les écrans plus petits */
-@media (max-width: 991.98px) {
-    .navbar-container .nav-link, .navbar-container .dropdown-toggle {
-        font-size: 16px; /* Réduire légèrement la taille du texte pour les petits écrans */
-    }
-
-    .navbar-container .custom-navbar,
-    .navbar-container .menu3 {
-        width: 100%; /* Assurez-vous que le menu occupe toute la largeur de l'écran */
-    }
+/* Pour les éléments de dropdown */
+.menu2 .dropdown-item {
+    font-size: 1.1rem; /* Ajustez la taille selon vos besoins */
 }

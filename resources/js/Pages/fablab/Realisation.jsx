@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CustomNavbar from './Navbar.jsx';
-import { Card, Button, Container, Row, Col } from 'react-bootstrap';
+import { Card, Button, Container, Row, Col, Modal } from 'react-bootstrap';
 import Footer from './Footer.jsx';
 import '../../../css/realisation.css'; // Assurez-vous de créer ce fichier CSS
 
 const Realisations = () => {
+    const [showModal, setShowModal] = useState(false); // État pour contrôler l'ouverture du modal
+    const [selectedRealisation, setSelectedRealisation] = useState(null); // État pour stocker le projet sélectionné
+
     const realisations = [
         {
             id: 1,
@@ -24,7 +27,6 @@ const Realisations = () => {
             description: 'Description du projet Z. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             image: 'https://via.placeholder.com/600x400?text=Projet+Z'
         },
-
         {
             id: 4,
             titre: 'Projet X',
@@ -43,17 +45,25 @@ const Realisations = () => {
             description: 'Description du projet Z. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             image: 'https://via.placeholder.com/600x400?text=Projet+Z'
         }
-
     ];
+
+    const handleOpenModal = (realisation) => {
+        setSelectedRealisation(realisation);
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
 
     return (
         <>
             <nav>
-            <CustomNavbar />
+                <CustomNavbar />
             </nav>
             <Container className="mt-5">
                 <h1 className="text-primary">RÉALISATIONS</h1>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
+                <p style={{ textAlign: 'justify' }}>Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
                 <section>
                     <h2 className="mt-4">Atelier</h2>
                     <div className="atelier-video text-center">
@@ -80,7 +90,7 @@ const Realisations = () => {
                                         <Card.Text>
                                             {realisation.description}
                                         </Card.Text>
-                                        <Button variant="primary">Lire plus</Button>
+                                        <Button variant="primary" onClick={() => handleOpenModal(realisation)}>Lire plus</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -88,6 +98,21 @@ const Realisations = () => {
                     </Row>
                 </section>
             </Container>
+
+            {/* Modal pour afficher les détails du projet */}
+            <Modal show={showModal} onHide={handleCloseModal} size="lg">
+                <Modal.Header closeButton>
+                    <Modal.Title>{selectedRealisation && selectedRealisation.titre}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>{selectedRealisation && selectedRealisation.description}</p>
+                    {/* Ajoutez ici d'autres informations spécifiques du projet si nécessaire */}
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseModal}>Fermer</Button>
+                </Modal.Footer>
+            </Modal>
+
             <footer>
                 <Footer />
             </footer>

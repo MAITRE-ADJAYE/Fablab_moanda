@@ -5,8 +5,9 @@ import { Card, Button, Carousel, Container, Row, Col } from 'react-bootstrap';
 import Footer from './Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Element } from 'react-scroll';
+import '../../../css/developpemnet.css'; // Assurez-vous d'importer le fichier CSS contenant la classe text-justify
 
-const ReferentDigital = () => {
+const Developpement = () => {
     const realisations = [
         {
             id: 1,
@@ -46,7 +47,6 @@ const ReferentDigital = () => {
             titre: 'Exercice de Développement 4',
             videoUrl: 'https://www.youtube.com/embed/your-video-id'
         },
-
         {
             id: 5,
             titre: 'Exercice de Développement 5',
@@ -86,7 +86,7 @@ const ReferentDigital = () => {
     return (
         <>
             <CustomNavbar />
-            <div className="container mt-4">
+            <Container className="mt-4">
                 <Element name="section1">
                     <motion.div
                         className="mt-4"
@@ -98,21 +98,19 @@ const ReferentDigital = () => {
                             {realisations.map(realisation => (
                                 <Carousel.Item key={realisation.id}>
                                     <img
-                                        className="d-block w-100"
+                                        className="d-block w-100 img-fluid"
                                         src={realisation.image}
                                         alt={realisation.titre}
                                     />
                                     <Carousel.Caption>
                                         <h3>{realisation.titre}</h3>
-                                        <p>{realisation.description}</p>
+                                        <p className="text-justify">{realisation.description}</p>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             ))}
                         </Carousel>
                     </motion.div>
                 </Element>
-
-
 
                 <Element name="section2" className="mt-5">
                     <motion.div
@@ -121,47 +119,43 @@ const ReferentDigital = () => {
                         initial="hidden"
                         animate="visible"
                     >
-                        <Container>
-                            <Row>
-                                <Col md={4} className="d-flex align-items-center justify-content-center">
-                                    <motion.div variants={cardVariants}>
-                                        <Card style={{ width: '20rem', height: 'fit-content' }}>
-                                            <Card.Img variant="top" src="https://via.placeholder.com/200x300" />
-                                            <Card.Body className="text-center">
-                                                <Card.Title>{ateliers[0].titre}</Card.Title>
-                                                <Card.Text>{ateliers[0].description}</Card.Text>
-                                                <Button variant="primary">En savoir plus</Button>
-                                            </Card.Body>
-                                        </Card>
-                                    </motion.div>
-                                </Col>
-                                <Col md={8} className="d-flex align-items-center">
-                                    <motion.div variants={cardVariants}>
-                                        <div className="bg-light p-3 mb-4">
-                                            <p>
-                                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
-                                            </p>
-                                        </div>
-                                    </motion.div>
-                                </Col>
-                            </Row>
-                        </Container>
+                        <Row className="mb-4">
+                            <Col md={12} lg={4} className="d-flex align-items-center justify-content-center">
+                                <motion.div variants={cardVariants}>
+                                    <Card className="text-center">
+                                        <Card.Img variant="top" src="https://via.placeholder.com/200x200" className="img-fluid" />
+                                        <Card.Body>
+                                            <Card.Title>{ateliers[0].titre}</Card.Title>
+                                            <Card.Text>{ateliers[0].description}</Card.Text>
+                                            <Button variant="primary">En savoir plus</Button>
+                                        </Card.Body>
+                                    </Card>
+                                </motion.div>
+                            </Col>
+                            <Col md={12} lg={8} className="d-flex align-items-center">
+                                <motion.div variants={cardVariants}>
+                                    <div className="bg-light p-3">
+                                        <p className="text-justify">
+                                            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            </Col>
+                        </Row>
                     </motion.div>
                 </Element>
 
-                {/* Add discipline description block */}
                 <Element name="disciplineDescription">
                     <Container className="mt-5 mb-5">
                         <Row className="justify-content-center">
-                            <Col md={8}>
+                            <Col md={12} lg={8}>
                                 <motion.div variants={containerVariants} initial="hidden" animate="visible">
-                                    <p className="text-center">
+                                    <p className="text-justify">
                                         Bienvenue dans le monde du développement où la créativité rencontre la technologie.
                                         Ce domaine dynamique vous plonge dans l'art de créer des solutions innovantes grâce à des langages de programmation modernes.
                                         Que vous soyez un débutant curieux ou un professionnel chevronné, nos ateliers et exercices vous guideront à travers les fondamentaux et les techniques avancées du développement logiciel.
                                         Explorez des projets concrets, des applications web interactives aux applications mobiles élégantes. Notre programme vous offre non seulement les compétences techniques essentielles,
-                                        mais aussi la pensée
-                                        critique et la résolution de problèmes nécessaires pour exceller dans l'ère numérique. Rejoignez-nous pour transformer vos idées en réalité numérique dès aujourd'hui !
+                                        mais aussi la pensée critique et la résolution de problèmes nécessaires pour exceller dans l'ère numérique. Rejoignez-nous pour transformer vos idées en réalité numérique dès aujourd'hui !
                                     </p>
                                 </motion.div>
                             </Col>
@@ -180,12 +174,12 @@ const ReferentDigital = () => {
                             <h2>Ateliers de Développement</h2>
                             <Row className="justify-content-center">
                                 {ateliers.map(atelier => (
-                                    <Col md={6} key={atelier.id}>
+                                    <Col xs={12} md={6} lg={4} key={atelier.id}>
                                         <motion.div variants={cardVariants}>
                                             <Card className="mb-4">
                                                 <iframe
                                                     title={atelier.titre}
-                                                    width="100%"
+                                                    className="w-100"
                                                     height="315"
                                                     src={atelier.videoUrl}
                                                     frameBorder="0"
@@ -215,12 +209,12 @@ const ReferentDigital = () => {
                             <h2>Exercices de Développement</h2>
                             <Row>
                                 {exercices.map(exercice => (
-                                    <Col md={4} key={exercice.id}>
+                                    <Col xs={12} md={6} lg={4} key={exercice.id}>
                                         <motion.div variants={cardVariants}>
                                             <Card className="mb-4">
                                                 <iframe
                                                     title={exercice.titre}
-                                                    width="100%"
+                                                    className="w-100"
                                                     height="200"
                                                     src={exercice.videoUrl}
                                                     frameBorder="0"
@@ -237,11 +231,11 @@ const ReferentDigital = () => {
                         </Container>
                     </motion.div>
                 </Element>
-            </div>
+            </Container>
 
             <Footer />
         </>
     );
 };
 
-export default ReferentDigital;
+export default Developpement;
