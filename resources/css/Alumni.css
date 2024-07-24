@@ -1,0 +1,53 @@
+/* Styles pour le Carousel */
+.carousel-custom {
+    height: 500px; /* Ajustez la hauteur du carousel selon vos besoins */
+    width: 100%; /* Assure que le carousel occupe toute la largeur disponible */
+    overflow: hidden; /* Évite le débordement d'images */
+}
+
+.carousel-custom img {
+    height: 100%; /* Remplit la hauteur du carousel */
+    object-fit: cover; /* Assure que l'image couvre le conteneur sans déformation */
+}
+
+/* Styles pour les images dans les cartes */
+.card-img-custom {
+    height: 250px; /* Ajustez la hauteur des images des cartes selon vos besoins */
+    object-fit: cover; /* Assure que l'image couvre le conteneur sans déformation */
+}
+
+
+/* Alumni.css */
+
+/* Mobile Styles */
+@media (max-width: 767.98px) {
+    .carousel-custom img {
+        height: auto;
+    }
+    .carousel-custom .carousel-caption {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .carousel-custom img {
+        height: auto;
+    }
+    .carousel-custom .carousel-caption {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+    .carousel-custom img {
+        height: auto;
+    }
+    .carousel-custom .carousel-caption {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+    }
+}

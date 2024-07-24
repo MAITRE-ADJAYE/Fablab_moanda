@@ -47,7 +47,9 @@ const Equipement = () => {
 
     return (
         <>
-            <CustomNavbar />
+            <nav>
+                <CustomNavbar />
+            </nav>
             <Container className="my-5 mt-5">
                 <h1>ÉQUIPEMENTS</h1>
                 <p>

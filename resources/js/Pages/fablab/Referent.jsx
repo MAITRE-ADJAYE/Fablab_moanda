@@ -5,6 +5,8 @@ import { Card, Button, Carousel, Container, Row, Col } from 'react-bootstrap';
 import Footer from './Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Element } from 'react-scroll';
+import Image from '../../../images/projet.jpg';
+import video from '../../../images/video.mp4';
 import '../../../css/style.css'; // Importer le fichier CSS contenant les styles
 
 const ReferentDigital = () => {
@@ -13,7 +15,25 @@ const ReferentDigital = () => {
             id: 1,
             titre: 'Réalisations Digitales',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
-            image: 'https://via.placeholder.com/1200x400?text=R%C3%A9alisations+Digitales'
+            image: Image
+        },
+        {
+            id: 2,
+            titre: 'Réalisations Digitales',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
+            image: Image
+        },
+        {
+            id: 3,
+            titre: 'Réalisations Digitales',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
+            image: Image
+        },
+        {
+            id: 4,
+            titre: 'Réalisations Digitales',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
+            image: Image
         }
     ];
 
@@ -22,7 +42,7 @@ const ReferentDigital = () => {
             id: 1,
             titre: 'Atelier 1',
             description: 'Présentation du projet avec différents détails',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         }
     ];
 
@@ -30,32 +50,32 @@ const ReferentDigital = () => {
         {
             id: 1,
             titre: 'Exercice 1',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 2,
             titre: 'Exercice 2',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 3,
             titre: 'Exercice 3',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 4,
             titre: 'Exercice 4',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 5,
             titre: 'Exercice 5',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 6,
             titre: 'Exercice 6',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         }
     ];
 
@@ -85,7 +105,9 @@ const ReferentDigital = () => {
 
     return (
         <>
-            <CustomNavbar />
+            <nav>
+                <CustomNavbar />
+            </nav>
             <div className="container mt-4">
                 <Element name="section1">
                     <motion.div
@@ -121,10 +143,10 @@ const ReferentDigital = () => {
                     >
                         <Container>
                             <Row>
-                                <Col md={4} className="d-flex align-items-center justify-content-center">
+                                <Col md={12} lg={4} className="d-flex align-items-center justify-content-center">
                                     <motion.div variants={cardVariants}>
                                         <Card style={{ width: '22rem', height: 'fit-content' }}>
-                                            <Card.Img variant="top" src="https://via.placeholder.com/200x200" />
+                                            <Card.Img variant="top" src={Image} />
                                             <Card.Body className="text-center">
                                                 <Card.Title>{ateliers[0].titre}</Card.Title>
                                                 <Card.Text className="text-justify">{ateliers[0].description}</Card.Text>
@@ -133,7 +155,7 @@ const ReferentDigital = () => {
                                         </Card>
                                     </motion.div>
                                 </Col>
-                                <Col md={8} className="d-flex align-items-center">
+                                <Col  md={12} lg={8} className="d-flex align-items-center">
                                     <motion.div variants={cardVariants}>
                                         <div className="bg-light p-3 mb-4">
                                             <p className="text-justify">

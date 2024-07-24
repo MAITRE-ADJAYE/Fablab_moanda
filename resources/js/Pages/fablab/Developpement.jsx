@@ -5,7 +5,11 @@ import { Card, Button, Carousel, Container, Row, Col } from 'react-bootstrap';
 import Footer from './Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Element } from 'react-scroll';
-import '../../../css/developpemnet.css'; // Assurez-vous d'importer le fichier CSS contenant la classe text-justify
+import Image1 from '../../../images/projet.jpg';
+import Image2 from '../../../images/jordan.jpg';
+import '../../../css/developpemnet.css'; // Correction du chemin d'importation
+
+import video from '../../../images/video.mp4';
 
 const Developpement = () => {
     const realisations = [
@@ -13,7 +17,25 @@ const Developpement = () => {
             id: 1,
             titre: 'Réalisations en Développement',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
-            image: 'https://via.placeholder.com/1200x400?text=R%C3%A9alisations+en+D%C3%A9veloppement'
+            image: Image1
+        },
+        {
+            id: 2,
+            titre: 'Réalisations en Développement',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
+            image: Image1
+        },
+        {
+            id: 3,
+            titre: 'Réalisations en Développement',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
+            image: Image1
+        },
+        {
+            id: 4,
+            titre: 'Réalisations en Développement',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
+            image: Image1
         }
     ];
 
@@ -22,7 +44,7 @@ const Developpement = () => {
             id: 1,
             titre: 'Atelier Développement 1',
             description: 'Présentation du projet avec différents détails',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         }
     ];
 
@@ -30,36 +52,35 @@ const Developpement = () => {
         {
             id: 1,
             titre: 'Exercice de Développement 1',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 2,
             titre: 'Exercice de Développement 2',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 3,
             titre: 'Exercice de Développement 3',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 4,
             titre: 'Exercice de Développement 4',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 5,
             titre: 'Exercice de Développement 5',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 6,
             titre: 'Exercice de Développement 6',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         }
     ];
 
-    // Variants for animations
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { duration: 0.5 } }
@@ -71,13 +92,11 @@ const Developpement = () => {
     };
 
     useEffect(() => {
-        // Add scroll event listener when component mounts
         const handleScroll = () => {
-            // Handle scroll events as needed
+            // Gérer les événements de défilement si nécessaire
         };
         window.addEventListener('scroll', handleScroll);
 
-        // Clean up event listener when component unmounts
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -85,8 +104,11 @@ const Developpement = () => {
 
     return (
         <>
-            <CustomNavbar />
-            <Container className="mt-4">
+            <nav>
+                <CustomNavbar />
+            </nav>
+            <Container className="mt-5">
+                <h2>Développement</h2>
                 <Element name="section1">
                     <motion.div
                         className="mt-4"
@@ -123,7 +145,7 @@ const Developpement = () => {
                             <Col md={12} lg={4} className="d-flex align-items-center justify-content-center">
                                 <motion.div variants={cardVariants}>
                                     <Card className="text-center">
-                                        <Card.Img variant="top" src="https://via.placeholder.com/200x200" className="img-fluid" />
+                                        <Card.Img variant="top" src={Image2} className="img-fluid" />
                                         <Card.Body>
                                             <Card.Title>{ateliers[0].titre}</Card.Title>
                                             <Card.Text>{ateliers[0].description}</Card.Text>
@@ -177,14 +199,15 @@ const Developpement = () => {
                                     <Col xs={12} md={6} lg={4} key={atelier.id}>
                                         <motion.div variants={cardVariants}>
                                             <Card className="mb-4">
-                                                <iframe
+                                                <video
                                                     title={atelier.titre}
                                                     className="w-100"
                                                     height="315"
-                                                    src={atelier.videoUrl}
-                                                    frameBorder="0"
-                                                    allowFullScreen
-                                                ></iframe>
+                                                    controls
+                                                >
+                                                    <source src={atelier.videoUrl} type="video/mp4" />
+                                                    Your browser does not support the video tag.
+                                                </video>
                                                 <Card.Body>
                                                     <Card.Title>{atelier.titre}</Card.Title>
                                                     <Card.Text>{atelier.description}</Card.Text>

@@ -9,15 +9,21 @@ import '../../../css/evenement.css';
 
 
 const getFirstDayOfMonth = (date) => {
+    // Crée une date pour le premier jour du mois en cours
     const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
-    return firstDay.getDay(); // Renvoie un nombre entre 0 (dimanche) et 6 (samedi)
+    // Renvoie le jour de la semaine du premier jour du mois (0 = dimanche, 6 = samedi)
+    return firstDay.getDay();
 };
 
 const getDaysInMonth = (date) => {
     const year = date.getFullYear();
-    const month = date.getMonth() + 1; // Les mois vont de 0 (janvier) à 11 (décembre)
-    return new Date(year, month, 0).getDate(); // Renvoie le nombre de jours dans le mois
+    const month = date.getMonth(); // Mois 0-indexé (0 = janvier, 11 = décembre)
+    // Crée une date pour le dernier jour du mois en cours
+    // En passant month + 1, nous obtenons le mois suivant, et 0 comme jour pour obtenir le dernier jour du mois courant
+    return new Date(year, month + 1, 0).getDate();
 };
+
+
 
 const Evenement = () => {
     const [date, setDate] = useState(new Date());
@@ -57,7 +63,7 @@ const Evenement = () => {
             id: 5,
             titre: 'Événement',
             description: 'Description de l\'événement 5. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            date: new Date(2024, 6, 18), // 30 Octobre 2024
+            date: new Date(2024, 6, 25), // 30 Octobre 2024
             image: 'https://via.placeholder.com/600x400?text=Événement+5'
         },
         {
@@ -200,7 +206,7 @@ const Evenement = () => {
                         </motion.h1>
 
                         {/* Conteneur principal */}
-                        <div className="bg-gray-200 min-h-screen">
+                        <div className="bg-gray-95 min-h-screen">
                             <div className="container mx-auto mt-10">
                                 <div className="wrapper bg-white rounded shadow w-full">
                                     {/* En-tête avec contrôles de navigation */}

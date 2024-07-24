@@ -5,6 +5,9 @@ import { Card, Button, Carousel, Container, Row, Col } from 'react-bootstrap';
 import Footer from './Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Element } from 'react-scroll';
+import Image1 from '../../../images/projet.jpg';
+import Image2 from '../../../images/jordan.jpg';
+import video from '../../../images/video.mp4';
 import '../../../css/style.css'; // Importer le fichier CSS contenant les styles
 
 const Electronique = () => {
@@ -13,7 +16,19 @@ const Electronique = () => {
             id: 1,
             titre: 'Réalisations Electronique',
             description: 'Découvrez nos réalisations en électronique et IoT.',
-            image: 'https://via.placeholder.com/1200x400?text=R%C3%A9alisations+Electro'
+            image: Image1
+        },
+        {
+            id: 2,
+            titre: 'Réalisations Electronique',
+            description: 'Découvrez nos réalisations en électronique et IoT.',
+            image: Image1
+        },
+        {
+            id: 3,
+            titre: 'Réalisations Electronique',
+            description: 'Découvrez nos réalisations en électronique et IoT.',
+            image: Image1
         }
     ];
 
@@ -22,7 +37,7 @@ const Electronique = () => {
             id: 1,
             titre: 'Assemblage de Circuits',
             description: 'Démonstration pratique sur l\'assemblage de circuits électroniques.',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         }
     ];
 
@@ -30,32 +45,32 @@ const Electronique = () => {
         {
             id: 1,
             titre: 'Exercice 1',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 2,
             titre: 'Exercice 2',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 3,
             titre: 'Exercice 3',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 4,
             titre: 'Exercice 4',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 5,
             titre: 'Exercice 5',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         },
         {
             id: 6,
             titre: 'Exercice 6',
-            videoUrl: 'https://www.youtube.com/embed/your-video-id'
+            videoUrl: video
         }
     ];
 
@@ -85,8 +100,11 @@ const Electronique = () => {
 
     return (
         <>
-            <CustomNavbar />
-            <div className="container mt-4">
+            <nav>
+                <CustomNavbar />
+            </nav>
+            <div className="container mt-5">
+                <h2>Electronique/Robotique/3D</h2>
                 <Element name="section1">
                     <motion.div
                         className="mt-4"
@@ -104,7 +122,7 @@ const Electronique = () => {
                                     />
                                     <Carousel.Caption>
                                         <h3>{realisation.titre}</h3>
-                                        <p className="text-justify">{realisation.description}</p>
+                                        <p className="text-center">{realisation.description}</p>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             ))}
@@ -121,10 +139,10 @@ const Electronique = () => {
                     >
                         <Container>
                             <Row>
-                                <Col md={4} className="d-flex align-items-center justify-content-center">
+                                <Col md={12} lg={4} className="d-flex align-items-center justify-content-center">
                                     <motion.div variants={cardVariants}>
                                         <Card style={{ width: '22rem', height: 'fit-content' }}>
-                                            <Card.Img variant="top" src="https://via.placeholder.com/200x200" />
+                                            <Card.Img variant="top" src={Image1} />
                                             <Card.Body className="text-center">
                                                 <Card.Title>{ateliers[0].titre}</Card.Title>
                                                 <Card.Text className="text-justify">{ateliers[0].description}</Card.Text>
@@ -133,10 +151,14 @@ const Electronique = () => {
                                         </Card>
                                     </motion.div>
                                 </Col>
-                                <Col md={8} className="d-flex align-items-center">
+                                <Col  md={12} lg={8} className="d-flex align-items-center">
                                     <motion.div variants={cardVariants}>
-                                        <div className="bg-light p-3 mb-4">
+                                        <div className="bg-light p-3 mb-4 text-center text-md-left">
                                             <p className="text-justify">
+                                                Découvrez nos dernières innovations en électronique qui révolutionnent le marché.
+                                                Découvrez nos dernières innovations en électronique qui révolutionnent le marché.
+                                                Découvrez nos dernières innovations en électronique qui révolutionnent le marché.
+                                                Découvrez nos dernières innovations en électronique qui révolutionnent le marché.
                                                 Découvrez nos dernières innovations en électronique qui révolutionnent le marché.
                                             </p>
                                         </div>
@@ -153,12 +175,12 @@ const Electronique = () => {
                             <Col md={8}>
                                 <motion.div variants={containerVariants} initial="hidden" animate="visible">
                                     <p className="text-justify text-center-responsive">
-                                        Bienvenue dans le domaine fascinant de l'électronique et de la robotique, où l'ingéniosité humaine rencontre la technologie avancée. 
-                                        Cette discipline vous immerge dans la conception et la création de circuits électroniques et de robots autonomes. 
-                                        Que vous soyez un débutant passionné ou un expert chevronné, nos ateliers et exercices vous guideront à travers les bases et les techniques avancées de l'électronique et de la robotique. 
-                                        Apprenez à construire et programmer des robots capables d'interagir avec leur environnement, 
-                                        tout en explorant les principes fondamentaux des composants électroniques. Notre programme met l'accent sur l'innovation, la résolution de problèmes et la pensée critique, 
-                                        vous préparant à relever les défis de l'ère technologique. 
+                                        Bienvenue dans le domaine fascinant de l'électronique et de la robotique, où l'ingéniosité humaine rencontre la technologie avancée.
+                                        Cette discipline vous immerge dans la conception et la création de circuits électroniques et de robots autonomes.
+                                        Que vous soyez un débutant passionné ou un expert chevronné, nos ateliers et exercices vous guideront à travers les bases et les techniques avancées de l'électronique et de la robotique.
+                                        Apprenez à construire et programmer des robots capables d'interagir avec leur environnement,
+                                        tout en explorant les principes fondamentaux des composants électroniques. Notre programme met l'accent sur l'innovation, la résolution de problèmes et la pensée critique,
+                                        vous préparant à relever les défis de l'ère technologique.
                                         Rejoignez-nous pour transformer vos idées en solutions électroniques et robotiques concrètes et novatrices dès aujourd'hui !
                                     </p>
                                 </motion.div>

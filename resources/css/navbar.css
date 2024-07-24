@@ -1,6 +1,6 @@
 /* Styles pour les logos */
 .navbar-brand img {
-    height: 65px; /* Augmenter la hauteur du logo */
+    height: 65px; /* Ajustez la hauteur du logo */
     width: auto;  /* Conserver les proportions du logo */
 }
 
@@ -10,7 +10,7 @@
     padding: 0.5rem 1rem;
 }
 
-/* Styles spécifiques pour les menus déroulants */
+/* Styles pour les menus déroulants */
 .navbar-nav .dropdown-menu {
     background-color: #ffffff; /* Couleur de fond du dropdown */
     z-index: 1050; /* Assurez-vous que le dropdown apparaît au-dessus du premier menu */
@@ -20,10 +20,14 @@
     color: #ffffff; /* Couleur du texte dans les items de menu */
 }
 
+
+
 .navbar-nav .dropdown-item:hover {
-    background-color: #fffb0f; /* Couleur de fond au survol des items de menu */
+    background-color: #3884f7; /* Couleur de fond au survol des items de menu */
     color: #ffffff; /* Couleur du texte au survol des items de menu */
 }
+
+
 
 /* Custom toggle button styles */
 .custom-toggler.navbar-toggler {
@@ -65,15 +69,26 @@
     }
 }
 
+@media (min-width: 992px) {
+    .navbar-container {
+        display: flex; /* Afficher les éléments de menu en flex sur les grands écrans */
+    }
+
+    .custom-navbar, .menu3 {
+        display: block; /* Assurez-vous que les menus sont affichés correctement */
+    }
+}
+
 /* Style pour l'onglet actif */
 .nav-link.active {
-    border-bottom: 3px solid #004C97; /* Couleur de la barre indiquant l'onglet actif */
+    border-bottom: 3px solid #0069a7; /* Couleur de la barre indiquant l'onglet actif */
 }
 
 .text-blue {
     color: #004C97; /* Définissez votre couleur de texte bleu ici */
 }
 
+/* Style pour le menu 3 */
 .menu3 .dropdown-menu {
     z-index: 1050; /* Assurez-vous que le z-index soit plus élevé que celui du premier menu */
 }
@@ -86,7 +101,7 @@
 }
 
 .nav-link-custom:hover, .nav-link-custom.active {
-    background-color: rgba(27, 183, 245, 0.1); /* Couleur de fond au survol ou quand actif */
+    background-color: rgb(255, 255, 251); /* Couleur de fond au survol ou quand actif */
     border-radius: 5px; /* Bordure arrondie au survol ou quand actif */
 }
 
@@ -103,4 +118,47 @@
 /* Pour les éléments de dropdown */
 .menu2 .dropdown-item {
     font-size: 1.1rem; /* Ajustez la taille selon vos besoins */
+}
+
+/* Conteneur pour la barre de navigation */
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Style pour les items de la barre de navigation */
+.navbar-item {
+    margin-bottom: 10px; /* Ajoutez de l'espace entre les deux menus */
+}
+
+/* Positionnement et style personnalisé de la première barre de navigation */
+.custom-navbar {
+    position: absolute;
+    top: 12%;
+    right: 0;
+    margin-right: 6%;
+    z-index: 1000;
+}
+
+/* Style pour le deuxième menu */
+.menu2 {
+    margin-right: -15%;
+}
+
+/* Couleur du texte pour le deuxième menu */
+.menu2 .nav-link,
+.menu2 .dropdown-toggle {
+    color: rgb(0, 117, 138) !important; /* Couleur du texte pour le menu 2 */
+}
+
+/* Couleur du texte pour le troisième menu */
+.menu3 .nav-link,
+.menu2 .dropdown-toggle1 {
+    color: rgb(253, 253, 253) !important; /* Couleur du texte pour le menu 3 */
+}
+
+/* Style pour le logo dans le premier menu */
+.menu1 {
+    height: 80px;
 }

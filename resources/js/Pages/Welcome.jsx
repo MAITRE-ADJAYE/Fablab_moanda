@@ -111,7 +111,7 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                     <section className="welcome-section py-5">
                         <div className="container">
                             <div className="row mb-4">
-                                <div className="col-md-12 text-left">
+                                <div className="col-md-12 mt-sm-3 col-lg-12 mt-md-5 text-left">
                                     <h2 className="font-bold text-4xl mb-4 text-primary">Bienvenue au Fablab Moanda</h2>
                                     <p className="mb-4 text-secondary text-justify">Le FabLab Moanda est un espace de fabrication numérique collaboratif ouvert à tous.
                                         Nous offrons des outils et des ressources pour transformer vos idées en réalité.
@@ -123,7 +123,7 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                 </div>
                             </div>
                             <div className="row align-items-center mb-4">
-                                <div className="col-md-6">
+                                <div className="col-md-12 col-lg-6 col-s-12">
                                     <h2 className="font-bold text-4xl mb-4 text-primary">Mot du Fab Manager</h2>
                                     <p className="mb-4 text-secondary text-justify">Le FabLab Moanda est un espace de fabrication numérique collaboratif ouvert à tous.
                                         Nous offrons des outils et des ressources pour transformer vos idées en réalité.
@@ -140,7 +140,7 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                 </div>
                             </div>
                             <div className="row align-items-center">
-                                <div className="col-md-6">
+                                <div className="col-md-12">
                                     <h2 className="font-bold text-4xl mb-4 text-primary">Notre vision</h2>
                                     <p className="mb-4 text-secondary text-justify">Le FabLab Moanda est un espace de fabrication numérique collaboratif ouvert à tous.
                                         Nous offrons des outils et des ressources pour transformer vos idées en réalité.
@@ -156,7 +156,6 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                     </section>
 
 
-                    {/* Carousel des cartes */}
                     <section id="cards-carousel" className="py-5">
                         <div className="container">
                             <div className="row">
@@ -215,19 +214,15 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                         </div>
                     </section>
 
-                    {/* Section équipe */}
-                    <section id="team" className="py-5">
+
+                    <section className="bg-gray-50 py-5">
                         <div className="container">
-                            <div className="row">
-                                <div className="col-12 text-center">
-                                    <h2 className="team-title text-primary">Notre Équipe</h2>
+                            <div className="row text-left mb-4">
+                                <div className="col-md-12">
+                                    <h2 className="font-bold text-4xl mb-4 text-primary">Notre Équipe</h2>
                                 </div>
                             </div>
-                            <div className="row">
-                                <div className="col-12">
-                                    <TeamCarousel teamMembers={equipe} />
-                                </div>
-                            </div>
+                            <TeamCarousel team={equipe} />
                         </div>
                     </section>
 

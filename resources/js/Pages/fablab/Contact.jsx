@@ -10,7 +10,9 @@ import map from '../../../../public/map.png'; // Assurez-vous que ce chemin est 
 const Contact = () => {
     return (
         <>
-            <CustomNavbar />
+            <nav>
+                <CustomNavbar />
+            </nav>
             <div className="container text-left mt-5">
                 <motion.h1
                     initial={{ opacity: 0, y: -20 }}
@@ -104,10 +106,10 @@ const Contact = () => {
                                 <Card.Body>
                                     <Card.Title>Suivez-nous</Card.Title>
                                     <div className="d-flex justify-content-around mt-4">
-                                        <FontAwesomeIcon icon={faFacebookF} size="3x" className="text-primary mx-3" />
-                                        <FontAwesomeIcon icon={faWhatsapp} size="3x" className="text-primary mx-3" />
-                                        <FontAwesomeIcon icon={faLinkedinIn} size="3x" className="text-primary mx-3" />
-                                        <FontAwesomeIcon icon={faYoutube} size="3x" className="text-primary mx-3" />
+                                        <a href="https://www.facebook.com/search/top?q=fablab%20moanda&__stsd__=eyJwcmltYXJ5Ijp7InR5cGUiOiJUWVBFQUhFQURfUEVPUExFX0VOVElUSUVTIn19"><FontAwesomeIcon icon={faFacebookF} size="3x" className="text-primary mx-3" /></a>
+                                        <a href=""> <FontAwesomeIcon icon={faWhatsapp} size="3x" className="text-primary mx-3" /></a>
+                                        <a href=""><FontAwesomeIcon icon={faLinkedinIn} size="3x" className="text-primary mx-3" /></a>
+                                        <a href=""><FontAwesomeIcon icon={faYoutube} size="3x" className="text-primary mx-3" /></a>
                                     </div>
                                 </Card.Body>
                             </Card>
