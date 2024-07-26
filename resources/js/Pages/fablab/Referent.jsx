@@ -5,7 +5,10 @@ import { Card, Button, Carousel, Container, Row, Col } from 'react-bootstrap';
 import Footer from './Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Element } from 'react-scroll';
-import Image from '../../../images/projet.jpg';
+import Image from '../../../images/ref.jpg';
+import Image1 from '../../../images/ref1.jpg';
+import Image2 from '../../../images/ref2.jpg';
+import Image3 from '../../../images/ref3.jpg';
 import video from '../../../images/video.mp4';
 import '../../../css/style.css'; // Importer le fichier CSS contenant les styles
 
@@ -21,19 +24,19 @@ const ReferentDigital = () => {
             id: 2,
             titre: 'Réalisations Digitales',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
-            image: Image
+            image: Image1
         },
         {
             id: 3,
             titre: 'Réalisations Digitales',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
-            image: Image
+            image: Image2
         },
         {
             id: 4,
             titre: 'Réalisations Digitales',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
-            image: Image
+            image: Image3
         }
     ];
 
@@ -126,7 +129,7 @@ const ReferentDigital = () => {
                                     />
                                     <Carousel.Caption>
                                         <h3>{realisation.titre}</h3>
-                                        <p className="text-justify">{realisation.description}</p>
+                                        <p className="text-center">{realisation.description}</p>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             ))}

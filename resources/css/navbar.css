@@ -79,6 +79,16 @@
     }
 }
 
+@media (min-width: 540px) {
+    .navbar-container {
+        display: flex; /* Afficher les éléments de menu en flex sur les grands écrans */
+    }
+
+    .custom-navbar, .menu3 {
+        display: block; /* Assurez-vous que les menus sont affichés correctement */
+    }
+}
+
 /* Style pour l'onglet actif */
 .nav-link.active {
     border-bottom: 3px solid #0069a7; /* Couleur de la barre indiquant l'onglet actif */
@@ -132,6 +142,8 @@
     margin-bottom: 10px; /* Ajoutez de l'espace entre les deux menus */
 }
 
+
+
 /* Positionnement et style personnalisé de la première barre de navigation */
 .custom-navbar {
     position: absolute;
@@ -141,10 +153,18 @@
     z-index: 1000;
 }
 
-/* Style pour le deuxième menu */
-.menu2 {
-    margin-right: -15%;
-}
+
+
+/* Responsive styles 
+@media (max-width: 1024px) {
+    .menu2-lg {
+        margin-right: 0; /* Réinitialiser la marge pour les écrans de 1024px et plus petits 
+    }
+
+    .navbar-item {
+        margin-bottom: 0; /* Supprimer l'espacement entre les deux menus 
+    }
+}*/
 
 /* Couleur du texte pour le deuxième menu */
 .menu2 .nav-link,
@@ -162,3 +182,5 @@
 .menu1 {
     height: 80px;
 }
+
+

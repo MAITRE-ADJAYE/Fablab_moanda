@@ -3,12 +3,12 @@ import CustomNavbar from '../fablab/Navbar.jsx';
 import { Card, Button, Carousel, Modal, Container, Row, Col } from 'react-bootstrap';
 import Footer from '../fablab/Footer.jsx';
 import { motion } from 'framer-motion'; // Import Framer Motion
-import image1 from '../../../images/projet.jpg'; // Importation des images
-import image2 from '../../../images/visite.jpg';
-import image3 from '../../../images/projet.jpg';
-import image4 from '../../../images/projet.jpg';
-import image5 from '../../../images/projet.jpg';
-import image6 from '../../../images/visite.jpg';
+import image1 from '../../../images/electro.webp'; // Importation des images
+import image2 from '../../../images/electro1.webp';
+import image3 from '../../../images/electro2.webp';
+import image4 from '../../../images/electro3.webp';
+import image5 from '../../../images/visite.webp';
+import image6 from '../../../images/visite1.webp';
 import '../../../css/Alumni.css'; // Importation des styles CSS personnalisés
 
 const Alumni = () => {

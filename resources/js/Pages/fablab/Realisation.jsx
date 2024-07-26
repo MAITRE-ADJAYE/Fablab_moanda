@@ -4,6 +4,12 @@ import { Card, Button, Container, Row, Col, Modal } from 'react-bootstrap';
 import Footer from './Footer.jsx';
 import '../../../css/realisation.css'; // Assurez-vous de créer ce fichier CSS
 
+import Image from '../../../images/electro2.webp';
+import Image1 from '../../../images/carrousel1.webp';
+import Image2 from '../../../images/ref2.jpg';
+import Image3 from '../../../images/ref3.jpg';
+import video from '../../../images/video.mp4';
+
 const Realisations = () => {
     const [showModal, setShowModal] = useState(false); // État pour contrôler l'ouverture du modal
     const [selectedRealisation, setSelectedRealisation] = useState(null); // État pour stocker le projet sélectionné
@@ -13,37 +19,37 @@ const Realisations = () => {
             id: 1,
             titre: 'Projet X',
             description: 'Description du projet X. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            image: 'https://via.placeholder.com/600x400?text=Projet+X'
+            image: Image
         },
         {
             id: 2,
             titre: 'Projet Y',
             description: 'Description du projet Y. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            image: 'https://via.placeholder.com/600x400?text=Projet+Y'
+            image: Image1
         },
         {
             id: 3,
             titre: 'Projet Z',
             description: 'Description du projet Z. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            image: 'https://via.placeholder.com/600x400?text=Projet+Z'
+            image: Image2
         },
         {
             id: 4,
             titre: 'Projet X',
             description: 'Description du projet X. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            image: 'https://via.placeholder.com/600x400?text=Projet+X'
+            image: Image3
         },
         {
             id: 5,
             titre: 'Projet Y',
             description: 'Description du projet Y. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            image: 'https://via.placeholder.com/600x400?text=Projet+Y'
+            image: Image3
         },
         {
             id: 6,
             titre: 'Projet Z',
             description: 'Description du projet Z. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            image: 'https://via.placeholder.com/600x400?text=Projet+Z'
+            image: Image2
         }
     ];
 
@@ -67,14 +73,15 @@ const Realisations = () => {
                 <section>
                     <h2 className="mt-4">Atelier</h2>
                     <div className="atelier-video text-center">
-                        <video
-                            className="video-fluid"
-                            src="https://www.w3schools.com/html/mov_bbb.mp4"
-                            controls
-                            autoPlay
-                            loop
-                            muted
-                        />
+                        <iframe
+                            width="100%"
+                            height="315"
+                            src="https://www.youtube.com/embed/YAe37Fnsd-k"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
                     </div>
                 </section>
 

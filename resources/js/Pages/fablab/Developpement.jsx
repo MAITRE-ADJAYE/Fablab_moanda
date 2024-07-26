@@ -5,8 +5,9 @@ import { Card, Button, Carousel, Container, Row, Col } from 'react-bootstrap';
 import Footer from './Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Element } from 'react-scroll';
-import Image1 from '../../../images/projet.jpg';
-import Image2 from '../../../images/jordan.jpg';
+import Image1 from '../../../images/dev.jpg';
+import Image2 from '../../../images/dev1.jpg';
+import Image3 from '../../../images/visite1.webp';
 import '../../../css/developpemnet.css'; // Correction du chemin d'importation
 
 import video from '../../../images/video.mp4';
@@ -23,13 +24,13 @@ const Developpement = () => {
             id: 2,
             titre: 'Réalisations en Développement',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
-            image: Image1
+            image: Image2
         },
         {
             id: 3,
             titre: 'Réalisations en Développement',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim.',
-            image: Image1
+            image: Image3
         },
         {
             id: 4,
@@ -126,7 +127,7 @@ const Developpement = () => {
                                     />
                                     <Carousel.Caption>
                                         <h3>{realisation.titre}</h3>
-                                        <p className="text-justify">{realisation.description}</p>
+                                        <p className="text-center">{realisation.description}</p>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             ))}

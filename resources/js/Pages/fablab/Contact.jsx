@@ -106,10 +106,10 @@ const Contact = () => {
                                 <Card.Body>
                                     <Card.Title>Suivez-nous</Card.Title>
                                     <div className="d-flex justify-content-around mt-4">
-                                        <a href="https://www.facebook.com/search/top?q=fablab%20moanda&__stsd__=eyJwcmltYXJ5Ijp7InR5cGUiOiJUWVBFQUhFQURfUEVPUExFX0VOVElUSUVTIn19"><FontAwesomeIcon icon={faFacebookF} size="3x" className="text-primary mx-3" /></a>
-                                        <a href=""> <FontAwesomeIcon icon={faWhatsapp} size="3x" className="text-primary mx-3" /></a>
-                                        <a href=""><FontAwesomeIcon icon={faLinkedinIn} size="3x" className="text-primary mx-3" /></a>
-                                        <a href=""><FontAwesomeIcon icon={faYoutube} size="3x" className="text-primary mx-3" /></a>
+                                        <a href="https://www.facebook.com/profile.php?id=100080703523107"><FontAwesomeIcon icon={faFacebookF} size="3x" className="text-primary mx-3" /></a>
+                                        <a href="https://api.whatsapp.com/send/?phone=24161010267&text&type=phone_number&app_absent=0"> <FontAwesomeIcon icon={faWhatsapp} size="3x" className="text-primary mx-3" /></a>
+                                        <a href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fsearch%2Fresults%2Fall%2F%3FheroEntityKey%3Durn%253Ali%253Aorganization%253A88922286%26keywords%3Dfablab%2520moanda%26origin%3DRICH_QUERY_SEARCH_HOME_HISTORY%26sid%3D%2540N-"><FontAwesomeIcon icon={faLinkedinIn} size="3x" className="text-primary mx-3" /></a>
+                                        <a href="https://www.youtube.com/@fablabmoanda"><FontAwesomeIcon icon={faYoutube} size="3x" className="text-primary mx-3" /></a>
                                     </div>
                                 </Card.Body>
                             </Card>

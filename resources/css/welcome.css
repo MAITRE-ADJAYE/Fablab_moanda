@@ -18,8 +18,6 @@
   text-align: center;
 }
 
-
-
 /* Conteneur du carousel */
 .carousel-container {
   margin-top: -20px; /* Ajustez cette valeur pour monter le carousel */
@@ -29,14 +27,6 @@
 .carousel-image {
   filter: brightness(40%); /* Réduit la luminosité de l'image à 40% */
 }
-
-
-
-
-
-
-
-
 
 /* Couleur et style du titre des cartes personnalisées */
 .card-title-custom {
@@ -68,6 +58,22 @@
 @media (max-width: 768px) {
   .carousel-container {
     height: 35vh; /* Ajustez la hauteur pour les petits écrans */
+  }
+
+  .carousel-caption-center h2 {
+    font-size: 3rem;
+  }
+
+  .carousel-caption-center p {
+    font-size: 1rem;
+  }
+
+  .text-primary {
+    font-size: 1.5rem;
+  }
+
+  .text-secondary {
+    font-size: 0.875rem;
   }
 }
 
@@ -102,8 +108,6 @@
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
-
 
 /* Réduction de la taille et largeur du bouton "Voir plus" */
 .btn-primary {

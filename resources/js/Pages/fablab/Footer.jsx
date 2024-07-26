@@ -49,10 +49,11 @@ const Footer = () => {
             <div className="container py-5">
                 <div className="row">
                     {/* Logo Description */}
-                    <div className="col-12 col-sm-6 col-md-6 col-lg-2 mt-5 footer-column text-center">
+                    <div className="col-12 col-sm-6 col-md-6 col-lg-2 mt-5 footer-column d-flex flex-column align-items-center text-center">
                         <img src={Logo} alt="Fablab Moanda Logo" className="footer-logo img-fluid mb-3" />
-                        <p style={{ fontFamily: 'Italianno, cursive', color: 'white' }}>Connecté à votre avenir</p>
+                        <p style={{ fontFamily: 'Arial, Helvetica, sans-serif', color: 'white' }}>Connecté à votre avenir</p>
                     </div>
+
                     {/* Description Column */}
                     <div className="col-12 col-sm-6 col-md-6 col-lg-3 my-5 mt-5 footer-column text-center">
                         <p style={{ color: 'white', textAlign: 'justify' }}>
@@ -62,27 +63,36 @@ const Footer = () => {
                         </p>
                     </div>
                     {/* Contacts Column */}
-                    <div className="col-12 col-sm-6 col-md-6 col-lg-3 mt-5 footer-column text-center">
-                        <h5 className="text-uppercase fw-bold mb-4" style={{ color: 'white' }}>Contacts</h5>
-                        <p><FontAwesomeIcon icon={faEnvelope} className="me-2 text-white" /> <a href="mailto:contact@fablabmoanda.com" className="text-white text-decoration-none">contact@fablabmoanda.com</a></p>
-                        <p>
-  <FontAwesomeIcon icon={faPhone} className="me-2 text-white" /><a href="tel:+241061010267" className="text-white text-decoration-none">0610 10 26 67/</a><a href="tel:+241061010267" className="text-white text-decoration-none">061 01 02 67</a></p>
-                        <p><FontAwesomeIcon icon={faHome} className="me-2 text-white" /> <a href="https://maps.app.goo.gl/qpCu9MiJT3F4BMrp8" className="text-white text-decoration-none"> Salle Polyvalente, R24, Moanda</a></p>
-                        <div className="mt-4">
-                            <a href="https://www.facebook.com/search/top?q=fablab%20moanda&__stsd__=eyJwcmltYXJ5Ijp7InR5cGUiOiJUWVBFQUhFQURfUEVPUExFX0VOVElUSUVTIn19" className="me-3 text-reset">
+                    <div className="col-12 col-sm-6 col-md-6 col-lg-3 mt-5 footer-column text-start">
+                        <h5 className="text-uppercase fw-bold mb-4 text-center" style={{ color: 'white' }}>Contacts</h5>
+                        <div className="d-flex align-items-center mb-2">
+                            <FontAwesomeIcon icon={faEnvelope} className="me-2 text-white" />
+                            <a href="mailto:contact@fablabmoanda.com" className="text-white text-decoration-none">contact@fablabmoanda.com</a>
+                        </div>
+                        <div className="d-flex align-items-center mb-2">
+                            <FontAwesomeIcon icon={faPhone} className="me-2 text-white" />
+                            <a href="tel:+241061010267" className="text-white text-decoration-none">061 01 02 67</a>
+                        </div>
+                        <div className="d-flex align-items-center mb-2">
+                            <FontAwesomeIcon icon={faHome} className="me-2 text-white" />
+                            <a href="https://maps.app.goo.gl/qpCu9MiJT3F4BMrp8" className="text-white text-decoration-none">Salle Polyvalente, R24, Moanda</a>
+                        </div>
+                        <div className="mt-4 d-flex justify-content-start">
+                            <a href="https://www.facebook.com/profile.php?id=100080703523107" className="me-3 text-reset">
                                 <FontAwesomeIcon icon={faFacebookF} className="fa-lg social-icon" />
                             </a>
-                            <a href="#" className="me-3 text-reset">
+                            <a href="https://api.whatsapp.com/send/?phone=24161010267&text&type=phone_number&app_absent=0" className="me-3 text-reset">
                                 <FontAwesomeIcon icon={faWhatsapp} className="fa-lg social-icon" />
                             </a>
-                            <a href="#" className="me-3 text-reset">
+                            <a href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fsearch%2Fresults%2Fall%2F%3FheroEntityKey%3Durn%253Ali%253Aorganization%253A88922286%26keywords%3Dfablab%2520moanda%26origin%3DRICH_QUERY_SEARCH_HOME_HISTORY%26sid%3D%2540N-" className="me-3 text-reset">
                                 <FontAwesomeIcon icon={faLinkedinIn} className="fa-lg social-icon" />
                             </a>
-                            <a href="#" className="me-3 text-reset">
+                            <a href="https://www.youtube.com/@fablabmoanda" className="me-3 text-reset">
                                 <FontAwesomeIcon icon={faYoutube} className="fa-lg social-icon" />
                             </a>
                         </div>
                     </div>
+
                     {/* Contact Form Column */}
                     <div className="col-12 col-sm-6 col-md-6 col-lg-4 mt-5 footer-column text-center">
                         <h5 className="text-uppercase fw-bold" style={{ color: 'white' }}>Laissez-nous un message</h5>
@@ -107,7 +117,7 @@ const Footer = () => {
                                     name="phone"
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    placeholder="Numéro"
+                                    placeholder="Téléphone"
                                     required
                                 />
                             </div>

@@ -93,3 +93,28 @@
 .future-event {
     background-color: #009723;
 }
+
+
+
+/* evenements.css */
+
+/* Styles pour les jours avec événements */
+.event-day {
+    position: relative;
+    cursor: pointer; /* Indiquer que l'élément est cliquable */
+}
+
+/* Styles pour l'effet de survol */
+.event-day:hover::after {
+    content: 'Cliquez pour voir l\'\év\ènements';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 3px;
+}

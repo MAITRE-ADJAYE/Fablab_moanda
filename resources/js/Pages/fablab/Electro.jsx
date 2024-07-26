@@ -5,8 +5,8 @@ import { Card, Button, Carousel, Container, Row, Col } from 'react-bootstrap';
 import Footer from './Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Element } from 'react-scroll';
-import Image1 from '../../../images/projet.jpg';
-import Image2 from '../../../images/jordan.jpg';
+import Image1 from '../../../images/visite.webp';
+import Image2 from '../../../images/visite1.webp';
 import video from '../../../images/video.mp4';
 import '../../../css/style.css'; // Importer le fichier CSS contenant les styles
 
@@ -22,7 +22,7 @@ const Electronique = () => {
             id: 2,
             titre: 'Réalisations Electronique',
             description: 'Découvrez nos réalisations en électronique et IoT.',
-            image: Image1
+            image: Image2
         },
         {
             id: 3,
