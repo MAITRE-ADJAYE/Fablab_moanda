@@ -30,8 +30,8 @@
 
 /* Couleur et style du titre des cartes personnalisées */
 .card-title-custom {
-  color: #fff; /* Couleur blanche pour le texte */
-  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent noir */
+  color: #ffffff; /* Couleur blanche pour le texte */
+  background-color: #004A99; /* Fond semi-transparent noir */
   padding: 10px;
   border-radius: 5px;
 }
@@ -109,15 +109,3 @@
   margin-bottom: 1rem;
 }
 
-/* Réduction de la taille et largeur du bouton "Voir plus" */
-.btn-primary {
-  font-size: 0.875rem; /* Réduit la taille du texte du bouton */
-  padding: 0.25rem 0.5rem; /* Réduit le padding du bouton */
-  border-radius: 0.25rem; /* Réduit le rayon de la bordure pour une apparence plus compacte */
-  width: 150px; /* Réduit la largeur du bouton */
-  margin-bottom: 1rem; /* Fait remonter le bouton légèrement */
-  margin-left: auto; /* Centre le bouton horizontalement */
-  margin-right: auto; /* Centre le bouton horizontalement */
-  display: block; /* Assure que le bouton est un élément de bloc pour le centrage */
-  text-align: center; /* Assure que le texte est centré */
-}

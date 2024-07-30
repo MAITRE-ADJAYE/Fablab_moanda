@@ -15,4 +15,7 @@ export default defineConfig({
             // Configuration des préprocesseurs si nécessaire
         },
     },
+    server: {
+        historyApiFallback: true, // Permet de rediriger les requêtes vers l'application React
+    },
 });

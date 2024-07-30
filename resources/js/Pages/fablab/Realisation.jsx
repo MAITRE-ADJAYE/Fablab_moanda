@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CustomNavbar from './Navbar.jsx';
 import { Card, Button, Container, Row, Col, Modal } from 'react-bootstrap';
 import Footer from './Footer.jsx';
+import { Head, Link } from '@inertiajs/react';
 import '../../../css/realisation.css'; // Assurez-vous de créer ce fichier CSS
 
 import Image from '../../../images/electro2.webp';
@@ -64,6 +65,7 @@ const Realisations = () => {
 
     return (
         <>
+        <Head title="Réalisations" />
             <nav>
                 <CustomNavbar />
             </nav>

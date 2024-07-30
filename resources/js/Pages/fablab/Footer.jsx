@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faFacebookF,
@@ -10,6 +10,7 @@ import { faHome, faEnvelope, faPhone, faArrowUp } from '@fortawesome/free-solid-
 import partenaires1 from "../../../images/partenaires1.png";
 import Logo from "../../../images/logo.png";
 import "../../../css/footer.css";
+import emailjs from 'emailjs-com'; // Assurez-vous que emailjs-com est installé
 
 const Footer = () => {
     const [formData, setFormData] = useState({
@@ -20,6 +21,7 @@ const Footer = () => {
     });
 
     const [showScroll, setShowScroll] = useState(false);
+    const form = useRef(); // Référence du formulaire
 
     const checkScrollTop = () => {
         setShowScroll(window.pageYOffset > 400);
@@ -41,7 +43,25 @@ const Footer = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form Data:', formData);
+        sendEmail(); // Envoyer l'email lors de la soumission
+    };
+
+    const sendEmail = () => {
+        emailjs.sendForm('service_sskhkvh', 'template_ioyyv6j', form.current, '5zkGGDOCZjFSkTLG8')
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                    setFormData({
+                        firstAndLastName: '',
+                        phone: '',
+                        email: '',
+                        comment: ''
+                    });
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                }
+            );
     };
 
     return (
@@ -84,7 +104,7 @@ const Footer = () => {
                             <a href="https://api.whatsapp.com/send/?phone=24161010267&text&type=phone_number&app_absent=0" className="me-3 text-reset">
                                 <FontAwesomeIcon icon={faWhatsapp} className="fa-lg social-icon" />
                             </a>
-                            <a href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fsearch%2Fresults%2Fall%2F%3FheroEntityKey%3Durn%253Ali%253Aorganization%253A88922286%26keywords%3Dfablab%2520moanda%26origin%3DRICH_QUERY_SEARCH_HOME_HISTORY%26sid%3D%2540N-" className="me-3 text-reset">
+                            <a href="https://ga.linkedin.com/company/fablab-moanda" className="me-3 text-reset">
                                 <FontAwesomeIcon icon={faLinkedinIn} className="fa-lg social-icon" />
                             </a>
                             <a href="https://www.youtube.com/@fablabmoanda" className="me-3 text-reset">
@@ -96,7 +116,7 @@ const Footer = () => {
                     {/* Contact Form Column */}
                     <div className="col-12 col-sm-6 col-md-6 col-lg-4 mt-5 footer-column text-center">
                         <h5 className="text-uppercase fw-bold" style={{ color: 'white' }}>Laissez-nous un message</h5>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} ref={form}>
                             <div className="form-group mb-3">
                                 <input
                                     type="text"

@@ -36,12 +36,12 @@ export default function CustomNavbar() {
                                 <NavDropdown.Item as={Link} href={route('alumni')} className={`text-dark ${isActive('alumni') ? 'active' : ''}`}>Alumni</NavDropdown.Item>
                             </NavDropdown>
                             <NavDropdown title="Formations" id="formations-dropdown" className="text-white">
-                                <NavDropdown.Item as={Link} href={route('developpement')} className={`text-dark ${isActive('developpement') ? 'active' : ''}`}>Développement Web/Mobile</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href={route('developpement')} className={`text-dark ${isActive('developpement') ? 'active' : ''}`}>Dev Web et Web Mobile</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} href={route('referent')} className={`text-dark ${isActive('referent') ? 'active' : ''}`}>Référent Digital</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} href={route('electro')} className={`text-dark ${isActive('electro') ? 'active' : ''}`}>Électronique/Robotique/3D</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link as={Link} href={route('contact')} className={`text-white ${isActive('contact') ? 'active' : ''}`}>
-                                Contacts
+                                Contact
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

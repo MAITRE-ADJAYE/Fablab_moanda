@@ -29,6 +29,7 @@
         "@mui/material": "^5.15.20",
         "@react-google-maps/api": "^2.19.3",
         "bootstrap": "^5.3.3",
+        "emailjs-com": "^3.2.0",
         "flowbite-react": "^0.10.1",
         "framer-motion": "^11.3.2",
         "mdb-react-ui-kit": "^8.0.0",
@@ -36,7 +37,7 @@
         "react-bootstrap": "^2.10.3",
         "react-calendar": "^5.0.0",
         "react-icons": "^5.2.1",
-        "react-router-dom": "^6.24.1",
+        "react-router-dom": "^6.25.1",
         "react-scroll": "^1.9.0",
         "swiper": "^11.1.7",
         "ziggy-js": "^2.2.1"

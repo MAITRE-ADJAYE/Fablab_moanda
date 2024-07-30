@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CustomNavbar from '../fablab/Navbar.jsx';
 import { Card, Button, Carousel, Modal, Container, Row, Col } from 'react-bootstrap';
 import Footer from '../fablab/Footer.jsx';
+import { Head, Link } from '@inertiajs/react';
 import { motion } from 'framer-motion'; // Import Framer Motion
 import image1 from '../../../images/carousel2.webp'; // Importation des images
 import image2 from '../../../images/electro.webp';
@@ -66,6 +67,7 @@ const Benevole = () => {
 
     return (
         <>
+        <Head title="Bénévole" />
             <nav>
                 <CustomNavbar />
             </nav>

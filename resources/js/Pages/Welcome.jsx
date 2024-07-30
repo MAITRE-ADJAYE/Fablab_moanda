@@ -88,7 +88,7 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
 
     return (
         <>
-            <Head title="Accueil" />
+            <Head title="" />
             <header className=''>
                 <CustomNavbar />
 
@@ -144,7 +144,7 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                         Une seule question subsiste : êtes-vous partant pour épouser cette vision ou pour en bénéficier ? Si la réponse est oui alors je vous donne rendez-vous dans notre laboratoire pour prendre part à l’aventure.
                                         Rejoignez-nous, rejoignez l’innovation, rejoignez le futur au Gabon.
 
-                                        Je vous attends.
+                                        Je vous attends. <br />
 
                                         Dimitri ONGOUA
                                         Fabmanager au Fablab Moanda.
@@ -182,6 +182,7 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                                 <Carousel.Caption>
                                                     <h5>Titre Actualité 1</h5>
                                                     <p>Description Actualité 1.</p>
+                                                    <Link href={route('actualite')} className="btn btn-primary mt-2">Voir plus</Link>
                                                 </Carousel.Caption>
                                             </Carousel.Item>
                                             <Carousel.Item>
@@ -189,6 +190,7 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                                 <Carousel.Caption>
                                                     <h5>Titre Actualité 2</h5>
                                                     <p>Description Actualité 2.</p>
+                                                    <Link href={route('actualite')} className="btn btn-primary mt-2">Voir plus</Link>
                                                 </Carousel.Caption>
                                             </Carousel.Item>
                                         </Carousel>
@@ -204,6 +206,7 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                                 <Carousel.Caption>
                                                     <h5>Titre Evènement 1</h5>
                                                     <p>Description Evènement 1.</p>
+                                                    <Link href={route('evenement')} className="btn btn-primary mt-2">Voir plus</Link>
                                                 </Carousel.Caption>
                                             </Carousel.Item>
                                             <Carousel.Item>
@@ -211,6 +214,7 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                                 <Carousel.Caption>
                                                     <h5>Titre Evènement 2</h5>
                                                     <p>Description Evènement 2.</p>
+                                                    <Link href={route('evenement')} className="btn btn-primary mt-2">Voir plus</Link>
                                                 </Carousel.Caption>
                                             </Carousel.Item>
                                         </Carousel>
@@ -227,12 +231,14 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                                     <h5>Titre Réalisation 1</h5>
                                                     <p>Description Réalisation 1.</p>
                                                 </Carousel.Caption>
+                                                    <Link href={route('realisations')} className="btn btn-primary mt-2">Voir plus</Link>
                                             </Carousel.Item>
                                             <Carousel.Item>
                                                 <img src={projet1} className="d-block w-100" alt="Réalisation Image 2" />
                                                 <Carousel.Caption>
                                                     <h5>Titre Réalisation 2</h5>
                                                     <p>Description Réalisation 2.</p>
+                                                    <Link href={route('realisations')} className="btn btn-primary mt-2">Voir plus</Link>
                                                 </Carousel.Caption>
                                             </Carousel.Item>
                                         </Carousel>
@@ -260,3 +266,11 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
         </>
     );
 }
+
+
+
+
+
+
+
+

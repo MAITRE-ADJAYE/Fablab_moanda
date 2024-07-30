@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Button, Container, Row, Col, Modal } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import { Head, Link } from '@inertiajs/react';
 import CustomNavbar from '../fablab/Navbar.jsx';
 import Footer from '../fablab/Footer.jsx';
 import '../../../css/Actualite.css'; // Styles personnalisés
@@ -135,6 +136,7 @@ const Actualite = () => {
 
     return (
         <>
+        <Head title="Actualités" />
             <nav>
                 <CustomNavbar />
             </nav>

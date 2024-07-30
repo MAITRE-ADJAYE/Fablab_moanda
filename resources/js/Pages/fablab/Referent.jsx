@@ -3,6 +3,7 @@ import CustomNavbar from './Navbar.jsx';
 import { motion } from 'framer-motion';
 import { Card, Button, Carousel, Container, Row, Col } from 'react-bootstrap';
 import Footer from './Footer.jsx';
+import { Head, Link } from '@inertiajs/react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Element } from 'react-scroll';
 import Image from '../../../images/ref.jpg';
@@ -108,6 +109,7 @@ const ReferentDigital = () => {
 
     return (
         <>
+        <Head title="Référents" />
             <nav>
                 <CustomNavbar />
             </nav>

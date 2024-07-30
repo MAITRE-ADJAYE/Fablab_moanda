@@ -2,6 +2,7 @@ import React from 'react';
 import CustomNavbar from '../fablab/Navbar.jsx';
 import { Card, Row, Col } from 'react-bootstrap';
 import Footer from '../fablab/Footer.jsx';
+import { Head, Link } from '@inertiajs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faLinkedinIn, faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
@@ -10,6 +11,7 @@ import map from '../../../../public/map.png'; // Assurez-vous que ce chemin est 
 const Contact = () => {
     return (
         <>
+        <Head title="Contact" />
             <nav>
                 <CustomNavbar />
             </nav>

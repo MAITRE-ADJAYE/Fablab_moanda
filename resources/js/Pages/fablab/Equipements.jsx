@@ -2,6 +2,7 @@ import React from 'react';
 import CustomNavbar from './Navbar.jsx';
 import { Container, Row, Col, Table, Button } from 'react-bootstrap';
 import Footer from './Footer.jsx';
+import { Head, Link } from '@inertiajs/react';
 import { motion } from 'framer-motion'; // Import Framer Motion
 import '../../../css/equipement.css';
 
@@ -47,6 +48,7 @@ const Equipement = () => {
 
     return (
         <>
+            <Head title="Equipements" />
             <nav>
                 <CustomNavbar />
             </nav>

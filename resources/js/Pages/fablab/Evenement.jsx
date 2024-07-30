@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CustomNavbar from './Navbar.jsx';
 import { Card, Button, Row, Col, Modal } from 'react-bootstrap'; // Assurez-vous que Modal est importé
 import { motion } from 'framer-motion';
+import { Head, Link } from '@inertiajs/react';
 import Footer from './Footer.jsx';
 import '../../../css/evenement.css';
 
@@ -143,6 +144,7 @@ const Evenement = () => {
 
     return (
         <>
+        <Head title="Evenements" />
             <nav>
                 <CustomNavbar />
             </nav>
