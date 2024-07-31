@@ -1,7 +1,9 @@
+/* Couleur primaire pour le texte */
 .text-primary {
-    color: #004C97; /* Ajustez à votre couleur bleue préférée */
+    color: #004C97; /* Couleur bleue préférée */
 }
 
+/* Style pour la vidéo dans la section atelier */
 .atelier-video {
     text-align: center;
     margin-top: 20px;
@@ -19,24 +21,60 @@
     margin-top: 15px;
     font-size: 1.1em;
     color: #333;
-   
 }
 
+/* Espacement entre les rangées */
 .row {
     margin-top: 20px;
 }
 
+/* Style des images dans les cartes */
 .card img {
     height: 200px;
     object-fit: cover;
 }
 
+/* Style pour les titres des cartes */
 .card-title {
     font-size: 1.25em;
     font-weight: bold;
 }
 
+/* Style pour le texte des cartes */
 .card-text {
     font-size: 1em;
     color: #666;
 }
+
+/* Définition des animations */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Application des animations */
+  [data-aos="fade-up"] {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  [data-aos="fade-left"] {
+    animation: fadeInLeft 1s ease-out;
+  }
+  

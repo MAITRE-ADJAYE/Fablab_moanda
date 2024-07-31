@@ -8,81 +8,91 @@ import TeamCarousel from './TeamCarousel';
 import '../../css/welcome.css';
 
 // Importez vos images (placeholders pour l'exemple)
-import projet1 from '../../images/electro.webp';
-import footer from '../../images/carrousel3.webp';
-import projet4 from '../../images/carrousel1.webp';
-import propos from '../../images/carousel2.webp';
-import equipe2 from '../../images/Dimitri.jpg';
-import Jordan from '../../images/Dimitri.jpg';
-import propos1 from '../../images/carrousel4.jpg';
-import propos2 from '../../images/evenement.jpg';
-import electro from '../../images/electro1.webp';
-import evenement from '../../images/evenement.jpg';
+import Fablab from '../../images/fablabmoanda.webp';
+import footer from '../../images/formation/formation.webp';
+import actualite from '../../images/actualité/actualite2.jpeg';
+import propos from '../../images/equipent/equipement1.jpeg';
+import propos1 from '../../images/projet/site projet.webp';
+import propos2 from '../../images/communauté/com.jpeg';
+//equipes du du Fabblab Moanda
+import Dimitri from '../../images/Dimitri.jpg';
+import Alex from '../../images/respo/monsieurAlex.webp';
+import Cabrel from '../../images/respo/respocabrel.webp';
+import Darryn from '../../images/Coach/Coach/darryn.jpg';
+import Rolly from '../../images/Coach/Coach/roly.webp';
+import Joe from '../../images/Coach/Coach/joe.jpg';
+
+//carrousel Infors
+import realisation from '../../images/realisation/realisation1.webp';
+import realisation1 from '../../images/realisation/realisation2.jpg';
+import evenement from '../../images/evenement/evenement.webp';
+import evenement1 from '../../images/evenement/evenement1.webp';
+
 
 export default function Welcome({ fablab, auth, actualites = [], realisations = [], evenements = [] }) {
     const slides = [
         {
-            image: projet1,
-            title: 'FABLAB MOANDA',
-            description: 'Bienvenue dans l\'univers du possible'
+            image: Fablab,
+            title: 'Bienvenue au Fablab Moanda',
+            description: 'Découvrez un espace où l\'innovation et la créativité prennent vie.'
         },
         {
             image: footer,
-            title: 'FABLAB MOANDA',
-            description: 'Où vous pouvez laisser libre cours à votre imagination'
+            title: 'Compétences',
+            description: 'Apprenez et développez des compétences.'
         },
         {
-            image: projet4,
-            title: 'FABLAB MOANDA',
-            description: 'Et où l\'information et les sciences du numérique'
+            image: actualite,
+            title: 'Actualités',
+            description: 'Restez Informés des dernières nouvelles.'
         },
         {
             image: propos,
-            title: 'FABLAB MOANDA',
-            description: 'D\'un commun accord,'
+            title: 'Equipements',
+            description: 'Des équipements de pointe à votre disposition.'
         },
         {
             image: propos1,
-            title: 'FABLAB MOANDA',
-            description: 'Vous connecte à.'
+            title: 'Nos Projets',
+            description: 'Découvrez et participez à nos projets.'
         },
         {
             image: propos2,
-            title: 'FABLAB MOANDA',
-            description: 'Votre avenir.'
+            title: 'Communauté',
+            description: 'Une communauté dynamique et collaborative.'
         }
     ];
 
     const equipe = [
         {
-            image: Jordan,
+            image: Dimitri,
             name: 'Dimitri ONGOUA',
-            role: 'Directeur'
+            role: 'Fabmanager'
         },
         {
-            image: Jordan,
-            name: 'Dimitri ONGOUA',
-            role: 'Responsable des Projets'
+            image: Alex,
+            name: 'Alex MBOUNGOU',
+            role: 'Responsable campus'
         },
         {
-            image: Jordan,
-            name: 'Dimitri ONGOUA',
-            role: 'Designer'
+            image: Cabrel,
+            name: 'Cabrel Mikolo',
+            role: 'Responsable campus'
         },
         {
-            image: Jordan,
-            name: 'Dimitri ONGOUA',
-            role: 'Développeur Web'
+            image: Darryn,
+            name: 'Darryn Tsounghat',
+            role: 'Coach Dev Web et Web Mobile'
         },
         {
-            image: equipe2,
-            name: 'Jordan TALLA',
-            role: 'Développeur Web'
+            image: Joe,
+            name: 'Joe Maurio',
+            role: 'Coach Référent Digital'
         },
         {
-            image: Jordan,
-            name: 'Dimitri ONGOUA',
-            role: 'Développeur Web'
+            image: Rolly,
+            name: 'Rolly Marvin',
+            role: 'Coach Electronique/Robotique/3D'
         }
     ];
 
@@ -94,7 +104,7 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
 
             </header>
             <section className="bg-gray-50 text-white">
-                <div className="relative min-h-screen flex flex-col">
+                <div className="relative min-h-screen flex flex-col col-xl-12 col-xxl-12">
                     {/* Carousel principal */}
                     <header className="d-flex justify-content-center justify-content-lg-end carousel-container">
                         <Carousel interval={3000}>
@@ -124,19 +134,20 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                         <div className="container">
                             <div className="row mb-4">
                                 <div className="col-md-12 mt-sm-3 col-lg-12 mt-md-5 text-left">
-                                    <h2 className="font-bold text-4xl mb-4 text-primary">Bienvenue au Fablab Moanda</h2>
-                                    <p className="mb-4 text-secondary text-justify">Le FabLab Moanda est un espace de fabrication numérique collaboratif ouvert à tous.
-                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
-                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
-                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
-                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
-                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
+                                    <h2 className="font-bold text-4xl mb-4 text-primary" style={{ color: '#004A99' }}>Bienvenue au Fablab Moanda</h2>
+                                    <p className="mb-4 text-secondary text-justify">
+                                        Le Fablab Moanda, né d'un partenariat entre la Compagnie Minière de l'Ogooué (Comilog) et la Mairie de Moanda,
+                                        est un incubateur technologique dédié à la réduction de la fracture numérique chez les jeunes, à la réinsertion professionnelle et à l'entrepreneuriat numérique.
+                                        Aspiration centrale de la région, il offre un espace d'apprentissage et d'accompagnement pour les nouvelles technologies.
+                                        Ses missions se déclinent en trois axes : la formation (programmes avancés en numérique),
+                                        l'acculturation (ateliers et événements sur les technologies émergentes), et l'accompagnement des porteurs de projets numériques.
+                                        Bienvenue dans l'univers du Fablab Moanda, où créativité et technologie façonnent un avenir inspirant.
                                     </p>
                                 </div>
                             </div>
                             <div className="row align-items-center mb-4">
                                 <div className="col-md-12 col-lg-6 col-s-12">
-                                    <h2 className="font-bold text-4xl mb-4 text-primary">Mot du Fab Manager</h2>
+                                    <h2 className="font-bold text-4xl mb-4 text-primary" style={{ color: '#004A99' }}>Mot du Fab Manager</h2>
                                     <p className="mb-4 text-secondary text-justify">Le numérique est omniscient dans notre quotidien. Que nous le voulions ou pas, que nous en soyons conscient ou pas, il influence notre e-consommation. Certains emboîtent le pas de la digitalisation pour en jouir des avantages et d’autres restent spectateurs parfois par ignorance. <br />
 
                                         C’est pourquoi le Fablab Moanda se positionne d’abord comme un acteur d’inclusion sociale en formant gratuitement la population de Moanda aux métiers du numérique afin de les autonomiser financièrement. Ensuite, comme un hub d’innovations technologiques au Gabon et dans la sous région. <br />
@@ -151,20 +162,22 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                     </p>
                                 </div>
                                 <div className="col-md-6 text-center">
-                                    <img src={Jordan} alt="Bienvenue au Fablab Moanda" className="img-fluid img-thumbnail" style={{ maxWidth: '70%', height: 'auto' }} />
+                                    <img src={Dimitri} alt="Bienvenue au Fablab Moanda" className="img-fluid img-thumbnail" style={{ maxWidth: '70%', height: 'auto' }} />
                                 </div>
                             </div>
                             <div className="row align-items-center">
                                 <div className="col-md-12">
-                                    <h2 className="font-bold text-4xl mb-4 text-primary">Notre vision</h2>
-                                    <p className="mb-4 text-secondary text-justify">Le FabLab Moanda est un espace de fabrication numérique collaboratif ouvert à tous.
-                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
-                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
-                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
-                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
-                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
-                                        Nous offrons des outils et des ressources pour transformer vos idées en réalité.
-                                    </p>
+                                    <h2 className="font-bold text-4xl mb-4 text-primary" style={{ color: '#004A99' }}>Notre vision</h2>
+                                    <p className="mb-4 text-secondary text-justify">Le Fablab Moanda aspire à bâtir un écosystème dynamique où compétences,
+                                        idées et contributions s'entremêlent pour façonner un avenir numérique prometteur pour notre ville. Plus qu'un lieu de formation,
+                                        c'est un carrefour de créativité et d'innovation où ingénieurs, artistes, entrepreneurs, étudiants et passionnés collaborent pour repousser les limites de la technologie.
+
+                                        Nous créons un environnement inclusif où la diversité des talents et des perspectives génère des idées novatrices. En favorisant l'innovation locale,
+                                        nous stimulons une économie numérique florissante et de nouvelles opportunités. Nous promouvons l'accessibilité technologique pour tous et encourageons l'apprentissage continu.
+
+                                        Le Fablab est un espace de collaboration où différentes perspectives se rencontrent pour libérer le potentiel humain.
+                                        Nous rêvons d'une ville où chaque citoyen s'épanouit grâce à l'innovation, et où le Fablab est un moteur de progrès et de transformation sociale.
+                                        Rejoignez-nous pour construire un futur collaboratif, créatif et durable pour notre communauté. </p>
                                 </div>
                             </div>
                         </div>
@@ -178,18 +191,18 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                     <div className="card bg-dark text-white flex-grow-1">
                                         <Carousel>
                                             <Carousel.Item>
-                                                <img src={projet1} className="d-block w-100" alt="Actualité Image 1" />
+                                                <img src={actualite} className="d-block w-100" alt="Actualité Image 1" />
                                                 <Carousel.Caption>
-                                                    <h5>Titre Actualité 1</h5>
-                                                    <p>Description Actualité 1.</p>
+                                                    <h5>Visite de la Mairie de Moanda</h5>
+                                                    <p>La visite de la mairie...</p>
                                                     <Link href={route('actualite')} className="btn btn-primary mt-2">Voir plus</Link>
                                                 </Carousel.Caption>
                                             </Carousel.Item>
                                             <Carousel.Item>
-                                                <img src={projet1} className="d-block w-100" alt="Actualité Image 2" />
+                                                <img src={actualite} className="d-block w-100" alt="Actualité Image 2" />
                                                 <Carousel.Caption>
-                                                    <h5>Titre Actualité 2</h5>
-                                                    <p>Description Actualité 2.</p>
+                                                    <h5>Visite de la Société Eramet</h5>
+                                                    <p>La visite de la société Eramet...</p>
                                                     <Link href={route('actualite')} className="btn btn-primary mt-2">Voir plus</Link>
                                                 </Carousel.Caption>
                                             </Carousel.Item>
@@ -202,18 +215,18 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                     <div className="card bg-dark text-white flex-grow-1">
                                         <Carousel>
                                             <Carousel.Item>
-                                                <img src={projet1} className="d-block w-100" alt="Evènement Image 1" />
+                                                <img src={evenement} className="d-block w-100" alt="Evènement Image 1" />
                                                 <Carousel.Caption>
-                                                    <h5>Titre Evènement 1</h5>
-                                                    <p>Description Evènement 1.</p>
+                                                    <h5>Visite de la Société Eramet</h5>
+                                                    <p>La visite de la société Eramet...</p>
                                                     <Link href={route('evenement')} className="btn btn-primary mt-2">Voir plus</Link>
                                                 </Carousel.Caption>
                                             </Carousel.Item>
                                             <Carousel.Item>
-                                                <img src={projet1} className="d-block w-100" alt="Evènement Image 2" />
+                                                <img src={evenement1} className="d-block w-100" alt="Evènement Image 2" />
                                                 <Carousel.Caption>
-                                                    <h5>Titre Evènement 2</h5>
-                                                    <p>Description Evènement 2.</p>
+                                                    <h5>Visite de la Mairie de Moanda</h5>
+                                                    <p>La visite de la mairie...</p>
                                                     <Link href={route('evenement')} className="btn btn-primary mt-2">Voir plus</Link>
                                                 </Carousel.Caption>
                                             </Carousel.Item>
@@ -221,23 +234,23 @@ export default function Welcome({ fablab, auth, actualites = [], realisations = 
                                     </div>
                                 </div>
 
-                                <div className="col-lg-4 col-md-6 mb-4 d-flex flex-column">
+                                <div className="col-lg-4 col-md-6 mb-4 d-flex flex-column" data-aos="fade-up">
                                     <h5 className="card-title text-center card-title-custom">Réalisations</h5>
                                     <div className="card bg-dark text-white flex-grow-1">
                                         <Carousel>
                                             <Carousel.Item>
-                                                <img src={projet1} className="d-block w-100" alt="Réalisation Image 1" />
+                                                <img src={realisation} className="d-block w-100" alt="Réalisation Image 1" />
                                                 <Carousel.Caption>
-                                                    <h5>Titre Réalisation 1</h5>
-                                                    <p>Description Réalisation 1.</p>
-                                                </Carousel.Caption>
+                                                    <h5>Projet IDO</h5>
+                                                    <p>La première cohorte...</p>
                                                     <Link href={route('realisations')} className="btn btn-primary mt-2">Voir plus</Link>
+                                                </Carousel.Caption>
                                             </Carousel.Item>
                                             <Carousel.Item>
-                                                <img src={projet1} className="d-block w-100" alt="Réalisation Image 2" />
+                                                <img src={realisation1} className="d-block w-100" alt="Réalisation Image 2" />
                                                 <Carousel.Caption>
-                                                    <h5>Titre Réalisation 2</h5>
-                                                    <p>Description Réalisation 2.</p>
+                                                    <h5>Réalisation d'une Badgeuse</h5>
+                                                    <p>Le projet de réalisation d'une badgeuse...</p>
                                                     <Link href={route('realisations')} className="btn btn-primary mt-2">Voir plus</Link>
                                                 </Carousel.Caption>
                                             </Carousel.Item>

@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
 import CustomNavbar from './Navbar.jsx';
-import { Card, Button, Row, Col, Modal } from 'react-bootstrap'; // Assurez-vous que Modal est importé
+import { Card, Button, Row, Col, Modal } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import { Head, Link } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 import Footer from './Footer.jsx';
 import '../../../css/evenement.css';
 
 import footer from '../../../images/carrousel3.webp';
 import evenement from '../../../images/evenement.jpg';
+
+const truncateText = (text, limit) => {
+    const words = text.split(' ');
+    if (words.length > limit) {
+        return {
+            truncated: words.slice(0, limit).join(' ') + '...',
+            fullText: text
+        };
+    }
+    return { truncated: text, fullText: text };
+};
 
 const getFirstDayOfMonth = (date) => {
     const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
@@ -50,15 +61,15 @@ const Evenement = () => {
     const evenements = [
         {
             id: 1,
-            titre: 'Événement',
-            description: 'Description de l\'événement 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            titre: 'Visite de la Société Eramet',
+            description: 'La visite de la société Eramet au Fablab Moanda a été un événement marquant, soulignant l\'importance de la collaboration entre les grandes entreprises industrielles et les initiatives technologiques locales pour stimuler l\'innovation et le développement communautaire.Objectifs de la Visite Présentation du Fablab : Montrer aux représentants d\'Eramet les installations, les équipements, et les projets en cours au Fablab Moanda. Renforcement des Partenariats : Discuter des possibilités de collaboration entre Eramet et le Fablab pour des projets futurs. Mise en Avant des Réalisations : Exposer les succès et les contributions du Fablab à la communauté locale.',
             date: new Date(2025, 0, 1),
             image: footer
         },
         {
             id: 2,
-            titre: 'Événement',
-            description: 'Description de l\'événement 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            titre: 'Visite de la Mairie de Moanda',
+            description: 'La visite de la mairie de Moanda a été une occasion privilégiée pour les membres du Fablab Moanda de renforcer les liens avec les autorités locales et de discuter des projets en cours et futurs. Cet événement a permis de mettre en lumière l\'importance de la collaboration entre les institutions publiques et les initiatives technologiques pour le développement de la région. Objectifs de la Visite Renforcement des Partenariats: Consolider la collaboration entre le Fablab Moanda et la mairie de Moanda. Présentation des Projets: Exposer les réalisations du Fablab et les projets en cours aux autorités locales. Discussions Stratégiques: Échanger sur les besoins locaux et identifier les opportunités de développement technologique. Promotion de l\'Innovation: Sensibiliser les décideurs locaux à l\'importance de l\'innovation et des technologies numériques pour le développement économique et social. Déroulement de la Visite Accueil et Présentation: Les représentants de la mairie ont accueilli l\'équipe du Fablab. Une présentation des missions et des objectifs du Fablab a été faite. Tour des Installations: Les membres du Fablab ont visité les différentes sections de la mairie pour mieux comprendre le fonctionnement des services municipaux. Exposition des Réalisations: Présentation des projets réalisés par le Fablab, notamment la badgeuse, les ateliers de formation, et les projets communautaires. Table Ronde: Discussions ouvertes sur les besoins technologiques de la mairie et les opportunités de collaboration future. Conclusions et Perspectives: Les deux parties ont exprimé leur satisfaction quant à la visite et leur désir de poursuivre et d\'intensifier leur collaboration.',
             date: new Date(2024, 11, 15),
             image: evenement
         },
@@ -129,7 +140,6 @@ const Evenement = () => {
 
     const getEventClass = (eventDate) => {
         const today = new Date();
-
         const eventDateOnly = new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate());
         const todayDateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 
@@ -144,7 +154,7 @@ const Evenement = () => {
 
     return (
         <>
-        <Head title="Evenements" />
+            <Head title="Evenements" />
             <nav>
                 <CustomNavbar />
             </nav>
@@ -169,38 +179,23 @@ const Evenement = () => {
                     Activités
                 </motion.h2>
                 <Row className="mt-4">
-                    {evenements.slice(0, 6).map(evenement => (
-                        <Col key={evenement.id} lg={4} md={6} className="mb-4">
+                    {evenements.slice(0, 6).map(event => (
+                        <Col key={event.id} lg={4} md={6} className="mb-4">
                             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 1.5 }}>
                                 <Card>
-                                    <Card.Img variant="top" src={evenement.image} />
+                                    <Card.Img variant="top" src={event.image} />
                                     <Card.Body>
-                                        <Card.Title>{evenement.titre}</Card.Title>
+                                        <Card.Title>{event.titre}</Card.Title>
                                         <Card.Text className="text-justify">
-                                            {evenement.description}
+                                            {truncateText(event.description, 30).truncated}
                                         </Card.Text>
-                                        <Card.Text>
-                                            Date : {evenement.date.toLocaleDateString()}
-                                        </Card.Text>
-                                        <Button variant="primary" onClick={() => handleShowModal(evenement)}>En savoir plus</Button>
+                                        <Button variant="primary" onClick={() => handleShowModal(event)}>Voir Plus</Button>
                                     </Card.Body>
                                 </Card>
                             </motion.div>
                         </Col>
                     ))}
                 </Row>
-
-                <Modal show={showModal} onHide={handleCloseModal}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>{selectedEvent && selectedEvent.titre}</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <p>{selectedEvent && selectedEvent.description}</p>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleCloseModal}>Fermer</Button>
-                    </Modal.Footer>
-                </Modal>
 
                 <motion.h2 className="mt-5" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 2 }}>
                     Calendrier
@@ -242,6 +237,18 @@ const Evenement = () => {
                     </div>
                 </div>
             </div>
+            <Modal show={showModal} onHide={handleCloseModal}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{selectedEvent?.titre}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <img src={selectedEvent?.image} alt={selectedEvent?.titre} className="img-fluid mb-3" />
+                    <p>{selectedEvent?.description}</p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseModal}>Fermer</Button>
+                </Modal.Footer>
+            </Modal>
             <Footer />
         </>
     );

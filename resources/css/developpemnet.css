@@ -1,3 +1,7 @@
 .text-justify {
     text-align: justify;
 }
+/* Filtre appliqué aux images du carousel */
+.carousel-image {
+    filter: brightness(40%); /* Réduit la luminosité de l'image à 40% */
+  }

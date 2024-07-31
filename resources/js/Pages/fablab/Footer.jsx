@@ -10,7 +10,6 @@ import { faHome, faEnvelope, faPhone, faArrowUp } from '@fortawesome/free-solid-
 import partenaires1 from "../../../images/partenaires1.png";
 import Logo from "../../../images/logo.png";
 import "../../../css/footer.css";
-import emailjs from 'emailjs-com'; // Assurez-vous que emailjs-com est installé
 
 const Footer = () => {
     const [formData, setFormData] = useState({
@@ -43,26 +42,33 @@ const Footer = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        sendEmail(); // Envoyer l'email lors de la soumission
+        
+        // Vérifiez les données avant l'envoi
+        console.log('FormData:', formData);
+    
+        fetch('/send_email.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams(formData).toString(),
+        })
+        .then(response => response.text())
+        .then(result => {
+            alert(result); // Affiche le message de succès ou d'erreur
+            setFormData({
+                firstAndLastName: '',
+                phone: '',
+                email: '',
+                comment: ''
+            }); // Réinitialiser le formulaire après l'envoi
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+        });
     };
-
-    const sendEmail = () => {
-        emailjs.sendForm('service_sskhkvh', 'template_ioyyv6j', form.current, '5zkGGDOCZjFSkTLG8')
-            .then(
-                () => {
-                    console.log('SUCCESS!');
-                    setFormData({
-                        firstAndLastName: '',
-                        phone: '',
-                        email: '',
-                        comment: ''
-                    });
-                },
-                (error) => {
-                    console.log('FAILED...', error.text);
-                }
-            );
-    };
+    
+    
 
     return (
         <footer style={{ backgroundColor: '#004C97' }} className="text-center text-lg-start text-white rounded mt-5">
@@ -165,7 +171,7 @@ const Footer = () => {
                                     required
                                 ></textarea>
                             </div>
-                            <button type="submit" className="btn btn-warning text-white mt-3" style={{ backgroundColor: '#FF8C00' }}>Envoyer</button>
+                            <button type="submit" className="btn btn-warning text-white mt-3" style={{ backgroundColor: '#FFD700', fontSize: '1.2rem' }}>Envoyer</button>
                         </form>
                     </div>
                 </div>

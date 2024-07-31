@@ -25,22 +25,22 @@ export default function CustomNavbar() {
                     <Navbar.Collapse id="second-navbar-nav">
                         <Nav className="ms-auto menu2">
                             <div title="Menu Principal" id="basic-nav-dropdown" className="text-white d-lg-none">
-                                <NavDropdown.Item as={Link} href={route('welcome')} className={`nav-link-custom ${isActive('welcome') ? 'active' : ''}`}>Accueil</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} href={route('evenement')} className={`nav-link-custom ${isActive('evenement') ? 'active' : ''}`}>Événements</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} href={route('actualite')} className={`nav-link-custom ${isActive('actualite') ? 'active' : ''}`}>Actualités</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} href={route('realisations')} className={`nav-link-custom ${isActive('realisations') ? 'active' : ''}`}>Réalisations</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} href={route('equipements')} className={`nav-link-custom ${isActive('equipements') ? 'active' : ''}`}>Équipements</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href={route('welcome')} className="nav-link-custom">Accueil</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href={route('evenement')} className="nav-link-custom">Événements</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href={route('actualite')} className="nav-link-custom">Actualités</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href={route('realisations')} className="nav-link-custom">Réalisations</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href={route('equipements')} className="nav-link-custom">Équipements</NavDropdown.Item>
                             </div>
                             <NavDropdown title="Communauté" id="communaute-dropdown" className="text-white">
-                                <NavDropdown.Item as={Link} href={route('benevole')} className={`text-dark ${isActive('benevole') ? 'active' : ''}`}>Bénévoles</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} href={route('alumni')} className={`text-dark ${isActive('alumni') ? 'active' : ''}`}>Alumni</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href={route('benevole')} className="text-dark">Bénévoles</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href={route('alumni')} className="text-dark">Alumni</NavDropdown.Item>
                             </NavDropdown>
                             <NavDropdown title="Formations" id="formations-dropdown" className="text-white">
-                                <NavDropdown.Item as={Link} href={route('developpement')} className={`text-dark ${isActive('developpement') ? 'active' : ''}`}>Dev Web et Web Mobile</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} href={route('referent')} className={`text-dark ${isActive('referent') ? 'active' : ''}`}>Référent Digital</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} href={route('electro')} className={`text-dark ${isActive('electro') ? 'active' : ''}`}>Électronique/Robotique/3D</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href={route('developpement')} className="text-dark">Dev Web et Web Mobile</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href={route('referent')} className="text-dark">Référent Digital</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href={route('electro')} className="text-dark">Électronique/Robotique/3D</NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link as={Link} href={route('contact')} className={`text-white ${isActive('contact') ? 'active' : ''}`}>
+                            <Nav.Link as={Link} href={route('contact')} className="text-white">
                                 Contact
                             </Nav.Link>
                         </Nav>
@@ -54,11 +54,11 @@ export default function CustomNavbar() {
                     <Navbar.Toggle aria-controls="first-navbar-nav" className="custom-toggler" />
                     <Navbar.Collapse id="first-navbar-nav">
                         <Nav className="ms-auto nav-pills">
-                            <Nav.Link as={Link} href={route('welcome')} className={`text-blue nav-link ${isActive('welcome') ? 'active' : ''}`}>Accueil</Nav.Link>
-                            <Nav.Link as={Link} href={route('evenement')} className={`text-blue nav-link ${isActive('evenement') ? 'active' : ''}`}>Événements</Nav.Link>
-                            <Nav.Link as={Link} href={route('actualite')} className={`text-blue nav-link ${isActive('actualite') ? 'active' : ''}`}>Actualités</Nav.Link>
-                            <Nav.Link as={Link} href={route('realisations')} className={`text-blue nav-link ${isActive('realisations') ? 'active' : ''}`}>Réalisations</Nav.Link>
-                            <Nav.Link as={Link} href={route('equipements')} className={`text-blue nav-link ${isActive('equipements') ? 'active' : ''}`}>Équipements</Nav.Link>
+                            <Nav.Link as={Link} href={route('welcome')} className="text-blue nav-link">Accueil</Nav.Link>
+                            <Nav.Link as={Link} href={route('evenement')} className="text-blue nav-link">Événements</Nav.Link>
+                            <Nav.Link as={Link} href={route('actualite')} className="text-blue nav-link">Actualités</Nav.Link>
+                            <Nav.Link as={Link} href={route('realisations')} className="text-blue nav-link">Réalisations</Nav.Link>
+                            <Nav.Link as={Link} href={route('equipements')} className="text-blue nav-link">Équipements</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

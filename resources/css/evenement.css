@@ -118,3 +118,11 @@
     font-size: 12px;
     border-radius: 3px;
 }
+
+
+.event-card .card-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Nombre de lignes à afficher */
+    -webkit-box-orient: vertical;
+}

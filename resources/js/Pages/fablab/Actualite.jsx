@@ -136,7 +136,7 @@ const Actualite = () => {
 
     return (
         <>
-        <Head title="Actualités" />
+            <Head title="Actualités" />
             <nav>
                 <CustomNavbar />
             </nav>
@@ -179,13 +179,13 @@ const Actualite = () => {
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ duration: 0.5 }}
                             >
-                                <iframe 
-                                    width="100%" 
-                                    height="315" 
-                                    src="https://www.youtube.com/embed/YAe37Fnsd-k" 
-                                    title="YouTube video player" 
-                                    frameBorder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                <iframe
+                                    width="100%"
+                                    height="315"
+                                    src="https://www.youtube.com/embed/YAe37Fnsd-k"
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen>
                                 </iframe>
                             </motion.div>
@@ -200,13 +200,13 @@ const Actualite = () => {
                                     transition={{ duration: 0.3 }}
                                 >
                                     <Card className="h-100">
-                                        <iframe 
-                                            width="100%" 
-                                            height="315" 
-                                            src={article.video.replace("watch?v=", "embed/")} 
-                                            title="YouTube video player" 
-                                            frameBorder="0" 
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        <iframe
+                                            width="100%"
+                                            height="315"
+                                            src={article.video.replace("watch?v=", "embed/")}
+                                            title="YouTube video player"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen>
                                         </iframe>
                                         <Card.Body>

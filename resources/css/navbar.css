@@ -20,14 +20,10 @@
     color: #ffffff; /* Couleur du texte dans les items de menu */
 }
 
-
-
 .navbar-nav .dropdown-item:hover {
     background-color: #b6d3ff; /* Couleur de fond au survol des items de menu */
     color: #ffffff; /* Couleur du texte au survol des items de menu */
 }
-
-
 
 /* Custom toggle button styles */
 .custom-toggler.navbar-toggler {
@@ -91,9 +87,11 @@
 
 /* Style pour l'onglet actif */
 .nav-link.active {
-    border-bottom: 3px solid #0069a7; /* Couleur de la barre indiquant l'onglet actif */
+    /* Enlève les styles spécifiques pour les onglets actifs */
+    border-bottom: none;
 }
 
+/* Couleur du texte */
 .text-blue {
     color: #004C97; /* Définissez votre couleur de texte bleu ici */
 }
@@ -103,6 +101,7 @@
     z-index: 1050; /* Assurez-vous que le z-index soit plus élevé que celui du premier menu */
 }
 
+/* Styles personnalisés pour les liens de menu */
 .nav-link-custom {
     color: white;
     font-size: 16px;
@@ -142,8 +141,6 @@
     margin-bottom: 10px; /* Ajoutez de l'espace entre les deux menus */
 }
 
-
-
 /* Positionnement et style personnalisé de la première barre de navigation */
 .custom-navbar {
     position: absolute;
@@ -152,19 +149,6 @@
     margin-right: 6%;
     z-index: 1000;
 }
-
-
-
-/* Responsive styles 
-@media (max-width: 1024px) {
-    .menu2-lg {
-        margin-right: 0; /* Réinitialiser la marge pour les écrans de 1024px et plus petits 
-    }
-
-    .navbar-item {
-        margin-bottom: 0; /* Supprimer l'espacement entre les deux menus 
-    }
-}*/
 
 /* Couleur du texte pour le deuxième menu */
 .menu2 .nav-link,
@@ -182,5 +166,3 @@
 .menu1 {
     height: 80px;
 }
-
-
